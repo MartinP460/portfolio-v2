@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1 class="mx-auto max-w-screen-lg text-7xl">Home!</h1>
+<a href="/projects">Projects</a>
