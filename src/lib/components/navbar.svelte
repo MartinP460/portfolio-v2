@@ -1,5 +1,6 @@
 <script lang="ts">
   import { navbarRoutes, navbarRoutesArray, navbarRoutesNames } from '$lib/utils/navbarRoutes'
+  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
   import { quadIn, quadOut } from 'svelte/easing'
   import { fly } from 'svelte/transition'
 
@@ -22,8 +23,13 @@
         <div
           class="absolute top-16 h-2 w-2 rounded-full bg-amber-600 transition-transform duration-[450ms]"
           style="transform: translateX({navbarRoutes[url].offset}px)"
-          in:fly={{ y: 20, duration: 200, delay: 250, easing: quadOut }}
-          out:fly={{ y: -20, duration: 200, easing: quadIn }}
+          in:fly={{
+            y: 20,
+            duration: TRANSITION_DURATION,
+            delay: TRANSITION_DELAY,
+            easing: quadOut
+          }}
+          out:fly={{ y: -20, duration: TRANSITION_DURATION, easing: quadIn }}
           aria-hidden={true}
         ></div>
       {/if}

@@ -4,6 +4,7 @@
   import { fly } from 'svelte/transition'
   import { quadIn, quadOut } from 'svelte/easing'
   import { navbarRoutes } from '$lib/utils/navbarRoutes'
+  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
 
   let { url, children } = $props()
 
@@ -27,8 +28,13 @@
 >
   {#key url}
     <div
-      in:fly={{ x: flyTowardsRight ? -200 : 200, duration: 200, delay: 250, easing: quadOut }}
-      out:fly={{ x: flyTowardsRight ? 200 : -200, duration: 200, easing: quadIn }}
+      in:fly={{
+        x: flyTowardsRight ? -200 : 200,
+        duration: TRANSITION_DURATION,
+        delay: TRANSITION_DELAY,
+        easing: quadOut
+      }}
+      out:fly={{ x: flyTowardsRight ? 200 : -200, duration: TRANSITION_DURATION, easing: quadIn }}
     >
       {@render children()}
     </div>
