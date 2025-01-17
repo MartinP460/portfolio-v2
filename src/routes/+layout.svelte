@@ -9,14 +9,18 @@
   let { data, children } = $props()
 </script>
 
-<div>
-  <Background />
-  <Navbar url={data.url} />
-  <main class="container mx-auto max-w-3xl">
-    {#if page.route.id !== '/'}
-      <NavbarTransition url={data.url}>{@render children()}</NavbarTransition>
-    {:else}
-      <HomeTransition>{@render children()}</HomeTransition>
-    {/if}
-  </main>
+<Background />
+<div class="h-24">
+  {#if page.route.id !== '/'}
+    <HomeTransition>
+      <Navbar url={data.url} />
+    </HomeTransition>
+  {/if}
 </div>
+<main class="container mx-auto max-w-3xl">
+  {#if page.route.id !== '/'}
+    <NavbarTransition url={data.url}>{@render children()}</NavbarTransition>
+  {:else}
+    <HomeTransition>{@render children()}</HomeTransition>
+  {/if}
+</main>

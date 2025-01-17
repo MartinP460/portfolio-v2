@@ -1,7 +1,7 @@
 <script>
-  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
   import { quadIn, quadOut } from 'svelte/easing'
   import { fly } from 'svelte/transition'
+  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
 
   let { children } = $props()
 </script>

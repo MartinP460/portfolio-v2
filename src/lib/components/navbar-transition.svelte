@@ -9,6 +9,7 @@
   let { url, children } = $props()
 
   let prevRoute = $state(url)
+  let innerWidth = $state<number | null>(null)
 
   beforeNavigate(() => {
     if (page.route.id) {
@@ -16,11 +17,18 @@
     }
   })
 
+  const isMobile = $derived((innerWidth ?? 601) < 600)
+
   const prevRouteOrder = $derived(navbarRoutes[prevRoute].order)
   const newRouteOrder = $derived(navbarRoutes[url].order)
 
-  const flyTowardsRight = $derived(prevRouteOrder < newRouteOrder)
+  // We negate the direction of the transition on mobile since it feels more natural.
+  const flyTowardsRight = $derived(
+    isMobile ? prevRouteOrder > newRouteOrder : prevRouteOrder < newRouteOrder
+  )
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div
   in:fly={{ y: 100, duration: TRANSITION_DURATION, delay: TRANSITION_DELAY, easing: quadOut }}
