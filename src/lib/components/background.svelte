@@ -4,7 +4,7 @@
   let { url } = $props()
 
   const BACKGROUND_CLASS_NAME = 'bg-gradient'
-  const gradients = ['#E0D1B8', '#D5C1A1', '#C9B189', '#BEA172', '#B3925C', '#AB864B']
+  const gradients = ['#E0D1B8', '#D5C1A1', '#C9B189', '#BEA172', '#D5C1A1', '#E0D1B8']
 
   const route = $derived(navbarRoutes[url])
   const gradient1 = $derived(gradients[Math.max(route.order, 2) - 2])
