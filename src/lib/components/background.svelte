@@ -1,5 +1,19 @@
+<script>
+  import { navbarRoutes } from '$lib/utils/navbarRoutes'
+
+  let { url } = $props()
+
+  const BACKGROUND_CLASS_NAME = 'bg-gradient'
+  const gradients = ['#E0D1B8', '#D5C1A1', '#C9B189', '#BEA172', '#B3925C', '#AB864B']
+
+  const route = $derived(navbarRoutes[url])
+  const gradient1 = $derived(gradients[Math.max(route.order, 2) - 2])
+  const gradient2 = $derived(gradients[Math.max(route.order, 2) - 1])
+</script>
+
 <div
-  class="from-background-gradient-start to-background-gradient-end fixed -z-20 h-screen w-screen bg-gradient-to-br p-4"
+  class="{BACKGROUND_CLASS_NAME} fixed -z-20 h-screen w-screen p-4 transition-all"
+  style="--background-gradient-start: {gradient1}; --background-gradient-end: {gradient2};"
 >
   <div class="relative h-full w-full">
     <div

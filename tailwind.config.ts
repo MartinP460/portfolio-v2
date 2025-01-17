@@ -10,8 +10,6 @@ export default {
       colors: {
         primary: '#283f13',
         background: '#e0d1b8',
-        'background-gradient-start': '#e0d1b8',
-        'background-gradient-end': '#ecd4ad',
         'text-foreground': colors.gray[800],
         'text-background': colors.gray[600]
       }

@@ -6,3 +6,26 @@ html {
   overflow: hidden;
   height: 100%;
 }
+
+@property --background-gradient-start {
+  syntax: '<color>';
+  initial-value: #e0d1b8;
+  inherits: false;
+}
+
+@property --background-gradient-end {
+  syntax: '<color>';
+  initial-value: #ab864b;
+  inherits: false;
+}
+
+.bg-gradient {
+  background: linear-gradient(
+    to bottom right,
+    var(--background-gradient-start),
+    var(--background-gradient-end)
+  );
+  transition:
+    --background-gradient-start 0.4s,
+    --background-gradient-end 0.4s;
+}

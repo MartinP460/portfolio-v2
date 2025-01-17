@@ -10,7 +10,7 @@ export type NavbarRoute = {
 }
 
 export const navbarRoutes: Record<string, NavbarRoute> = {
-  '/home': {
+  '/': {
     name: 'home',
     href: '/',
     order: 1,
