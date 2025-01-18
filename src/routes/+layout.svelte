@@ -9,7 +9,7 @@
   let { data, children } = $props()
 </script>
 
-<Background url={data.url} />
+<Background />
 <div class="h-24">
   {#if page.route.id !== '/'}
     <HomeTransition>

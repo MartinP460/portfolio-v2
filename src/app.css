@@ -7,7 +7,9 @@ html {
   height: 100%;
 }
 
-@property --background-gradient-start {
+/* Background linear gradient with transition. */
+
+/* @property --background-gradient-start {
   syntax: '<color>';
   initial-value: #e0d1b8;
   inherits: false;
@@ -21,11 +23,11 @@ html {
 
 .bg-gradient {
   background: linear-gradient(
-    to bottom right,
+    to right,
     var(--background-gradient-start),
     var(--background-gradient-end)
   );
   transition:
-    --background-gradient-start 0.4s,
-    --background-gradient-end 0.4s;
-}
+    --background-gradient-start 0.4s ease-in-out,
+    --background-gradient-end 0.4s ease-in-out;
+} */
