@@ -46,6 +46,9 @@
 
   <nav class="hidden lg:block">
     <ul class="grid grid-cols-6 gap-x-12 text-lg text-gray-600">
+      <li class="flex flex-col items-center">
+        <a href="/">home</a>
+      </li>
       {#each navbarRoutesArray as { name, href }}
         <li class="flex flex-col items-center">
           <a {href}>
