@@ -7,6 +7,7 @@
 </script>
 
 <div
+  class="h-full"
   in:fly={{ y: 100, duration: TRANSITION_DURATION, delay: TRANSITION_DELAY, easing: quadOut }}
   out:fly={{ y: -100, duration: TRANSITION_DURATION, easing: quadIn }}
 >
