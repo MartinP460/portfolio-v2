@@ -6,16 +6,16 @@
   import { navbarRoutes, navbarRoutesArray, navbarRoutesNames } from '$lib/utils/navbarRoutes'
   import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
 
-  type NavbarProps = { url: string }
+  type NavbarProps = { path: string }
 
-  let { url }: NavbarProps = $props()
+  let { path }: NavbarProps = $props()
 </script>
 
 <header class="flex grid-flow-dense items-center justify-center p-8">
   <div class="lg:hidden">
     <DropdownMenu.Root>
       <DropdownMenu.Trigger class="flex items-center gap-2">
-        <p class="text-lg">{navbarRoutes[url]?.name}</p>
+        <p class="text-lg">{navbarRoutes[path]?.name}</p>
         <IconChevronDown size="20" />
       </DropdownMenu.Trigger>
 
@@ -29,7 +29,7 @@
               <DropdownMenu.Item>
                 <a {href} class="inline-flex w-full items-center justify-between text-xl">
                   {name}
-                  {#if navbarRoutes[url]?.name === name}
+                  {#if navbarRoutes[path]?.name === name}
                     <div class="h-2 w-2 rounded-full bg-amber-600"></div>
                   {/if}
                 </a>
@@ -56,10 +56,10 @@
           </a>
         </li>
       {/each}
-      {#if navbarRoutesNames.includes(url)}
+      {#if navbarRoutesNames.includes(path)}
         <div
           class="absolute top-16 h-2 w-2 rounded-full bg-amber-600 transition-transform duration-[450ms]"
-          style="transform: translateX({navbarRoutes[url].offset}px)"
+          style="transform: translateX({navbarRoutes[path].offset}px)"
           in:fly={{
             y: 20,
             duration: TRANSITION_DURATION,

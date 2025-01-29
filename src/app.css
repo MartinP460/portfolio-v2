@@ -72,3 +72,7 @@ body {
     --background-gradient-start 0.4s ease-in-out,
     --background-gradient-end 0.4s ease-in-out;
 } */
+
+:root {
+  view-transition-name: none;
+}

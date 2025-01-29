@@ -1,5 +1,7 @@
 <script lang="ts">
   import '../app.css'
+  import { onNavigate } from '$app/navigation'
+
   import { navbarRoutesNames } from '$lib/utils/navbarRoutes'
   import Background from '$lib/components/background.svelte'
   import Navbar from '$lib/components/navbar.svelte'
@@ -8,17 +10,28 @@
 
   let { data, children } = $props()
 
-  let paths = $derived(data.url.split('/'))
+  let paths = $derived(data.path.split('/'))
 
   let firstLevelRoute = $derived(`/${paths[1]}`)
   let secondLevelRoute = $derived(paths.length > 2 ? `/${paths[2]}` : null)
+
+  onNavigate((navigation) => {
+    if (!document.startViewTransition) return
+
+    return new Promise((resolve) => {
+      document.startViewTransition(async () => {
+        resolve()
+        await navigation.complete
+      })
+    })
+  })
 </script>
 
 <Background />
 <div class="min-h-24">
   {#if firstLevelRoute !== '/' && !secondLevelRoute}
     <HomeTransition>
-      <Navbar url={firstLevelRoute} />
+      <Navbar path={firstLevelRoute} />
     </HomeTransition>
   {/if}
 </div>
@@ -26,6 +39,6 @@
   {#if firstLevelRoute === '/'}
     <HomeTransition>{@render children()}</HomeTransition>
   {:else if navbarRoutesNames.includes(firstLevelRoute)}
-    <NavbarTransition url={firstLevelRoute}>{@render children()}</NavbarTransition>
+    <NavbarTransition path={firstLevelRoute}>{@render children()}</NavbarTransition>
   {/if}
 </main>
