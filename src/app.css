@@ -11,11 +11,7 @@
   --navbar-height: 6rem;
 }
 
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
+html,
 body {
   height: 100%;
 }

@@ -21,7 +21,7 @@
 
       <DropdownMenu.Content class="fixed !left-0 !top-0 z-10 !mt-0 h-full w-full">
         <div
-          class="flex h-full w-full flex-col justify-center bg-white/20 shadow-sm backdrop-blur-sm"
+          class="flex h-full w-full flex-col justify-center bg-white/20 shadow-sm backdrop-blur-md"
           transition:fly
         >
           <nav class="mx-16 flex flex-col gap-5">

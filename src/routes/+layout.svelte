@@ -35,7 +35,7 @@
     </HomeTransition>
   {/if}
 </div>
-<main class="container mx-auto h-full max-w-3xl">
+<main class="container mx-auto h-[calc(100%-var(--navbar-height))] max-w-3xl">
   {#if firstLevelRoute === '/'}
     <HomeTransition>{@render children()}</HomeTransition>
   {:else if navbarRoutesNames.includes(firstLevelRoute)}
