@@ -6,8 +6,8 @@
 
 <div class="mt-12">
   <div class="flex h-[500px]">
-    <div class="flex-1">
-      <p class="text-xl">
+    <div class="animate-fade-in animate-delay-2 flex-1">
+      <p class="font-title text-4xl font-bold">
         {project.name}
       </p>
     </div>

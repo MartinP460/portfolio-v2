@@ -15,7 +15,7 @@
   <div class="lg:hidden">
     <DropdownMenu.Root>
       <DropdownMenu.Trigger class="flex items-center gap-2">
-        <p class="text-lg">{navbarRoutes[path]?.name}</p>
+        <p class="font-title text-lg">{navbarRoutes[path]?.name}</p>
         <IconChevronDown size="20" />
       </DropdownMenu.Trigger>
 
@@ -25,12 +25,18 @@
           transition:fly
         >
           <nav class="mx-16 flex flex-col gap-5">
+            <a href="/" class="inline-flex w-full items-center justify-between font-title text-xl">
+              Home
+            </a>
             {#each navbarRoutesArray as { name, href }}
               <DropdownMenu.Item>
-                <a {href} class="inline-flex w-full items-center justify-between text-xl">
+                <a
+                  {href}
+                  class="inline-flex w-full items-center justify-between font-title text-xl"
+                >
                   {name}
                   {#if navbarRoutes[path]?.name === name}
-                    <div class="h-2 w-2 rounded-full bg-amber-600"></div>
+                    <div class="h-2 w-2 rounded-full bg-primary"></div>
                   {/if}
                 </a>
               </DropdownMenu.Item>
@@ -45,12 +51,12 @@
   </div>
 
   <nav class="hidden lg:block">
-    <ul class="grid grid-cols-6 gap-x-12 text-lg text-gray-600">
-      <li class="flex flex-col items-center">
+    <ul class="flex text-lg text-gray-600">
+      <li class="px-8 font-title transition-[font-size] hover:text-xl">
         <a href="/">home</a>
       </li>
       {#each navbarRoutesArray as { name, href }}
-        <li class="flex flex-col items-center">
+        <li class="px-8 font-title transition-[font-size] hover:text-xl">
           <a {href}>
             {name}
           </a>
@@ -58,7 +64,7 @@
       {/each}
       {#if navbarRoutesNames.includes(path)}
         <div
-          class="absolute top-16 h-2 w-2 rounded-full bg-amber-600 transition-transform duration-[450ms]"
+          class="absolute top-16 h-2 w-2 rounded-full bg-primary transition-transform duration-[450ms]"
           style="transform: translateX({navbarRoutes[path].offset}px)"
           in:fly={{
             y: 20,

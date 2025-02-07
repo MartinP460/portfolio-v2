@@ -2,6 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Importing Fuzzy bubbles (titles) and Josefin Sans (body). */
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root {
+  /* Disable default page view transitions. */
+  view-transition-name: none;
+  --navbar-height: 6rem;
+}
+
 html {
   overflow: hidden;
   height: 100%;
@@ -12,6 +21,20 @@ body {
 }
 
 /* Fade-in animations. */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fade-in ease-in-out 0.6s forwards;
+}
 
 @keyframes fade-in-top {
   from {
@@ -46,33 +69,4 @@ body {
 }
 .animate-delay-6 {
   animation-delay: 0.6s;
-}
-
-/* Background linear gradient with transition. */
-
-/* @property --background-gradient-start {
-  syntax: '<color>';
-  initial-value: #e0d1b8;
-  inherits: false;
-}
-
-@property --background-gradient-end {
-  syntax: '<color>';
-  initial-value: #ab864b;
-  inherits: false;
-}
-
-.bg-gradient {
-  background: linear-gradient(
-    to right,
-    var(--background-gradient-start),
-    var(--background-gradient-end)
-  );
-  transition:
-    --background-gradient-start 0.4s ease-in-out,
-    --background-gradient-end 0.4s ease-in-out;
-} */
-
-:root {
-  view-transition-name: none;
 }

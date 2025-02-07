@@ -13,6 +13,11 @@ export default {
         'text-foreground': colors.gray[800],
         'text-background': colors.gray[600]
       }
+    },
+    fontFamily: {
+      // We ensure fonts with spaces have " " surrounding it.
+      title: ['"Fuzzy Bubbles"', 'sans-serif'],
+      body: ['"Josefin Sans"', 'serif']
     }
   },
 

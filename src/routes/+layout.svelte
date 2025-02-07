@@ -28,7 +28,7 @@
 </script>
 
 <Background />
-<div class="min-h-24">
+<div class="h-[var(--navbar-height)]">
   {#if firstLevelRoute !== '/' && !secondLevelRoute}
     <HomeTransition>
       <Navbar path={firstLevelRoute} />

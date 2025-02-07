@@ -20,25 +20,25 @@ export const navbarRoutes: Record<string, NavbarRoute> = {
     name: 'experience',
     href: '/experience',
     order: 3,
-    offset: 313
+    offset: 328
   },
   '/education': {
     name: 'education',
     href: '/education',
     order: 4,
-    offset: 450
+    offset: 488
   },
   '/toolbox': {
     name: 'toolbox',
     href: '/toolbox',
     order: 5,
-    offset: 585
+    offset: 633
   },
   '/about': {
     name: 'about me',
     href: '/about',
     order: 6,
-    offset: 720
+    offset: 776
   }
 }
 
