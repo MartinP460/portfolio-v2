@@ -1,9 +1,8 @@
 import { error } from '@sveltejs/kit'
-import type { PageLoad } from './$types'
-import { getProjects } from '$lib/utils/getProjects'
+import { ContentType, getContent, type Project } from '$lib/utils/getContent'
 
-export const load: PageLoad = ({ params }) => {
-  const projects = getProjects()
+export const load = ({ params }) => {
+  const projects = getContent<Project>(ContentType.Projects)
   const project = projects.find((project) => project.slug === params.project)
 
   if (project) return project

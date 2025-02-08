@@ -33,6 +33,7 @@
 <div
   in:fly={{ y: 100, duration: TRANSITION_DURATION, delay: TRANSITION_DELAY, easing: quadOut }}
   out:fly={{ y: -100, duration: TRANSITION_DURATION, easing: quadIn }}
+  class="h-full"
 >
   {#key path}
     <div
@@ -43,6 +44,7 @@
         easing: quadOut
       }}
       out:fly={{ x: flyTowardsRight ? 200 : -200, duration: TRANSITION_DURATION, easing: quadIn }}
+      class="h-full"
     >
       {@render children()}
     </div>
