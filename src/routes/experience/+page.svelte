@@ -25,10 +25,10 @@
         <div>
           <h3 class="font-title text-xl font-bold text-black">{companyName}</h3>
           <div
-            class="mt-1 flex flex-col items-center font-body text-sm font-semibold text-primary sm:flex-row"
+            class="mt-1 flex flex-col gap-y-1 font-body text-sm font-semibold text-primary sm:flex-row sm:items-center"
           >
             <p>{position}</p>
-            <div class="mx-4 h-1 w-1 rounded-full bg-gray-600"></div>
+            <div class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:block"></div>
             <p>{timePeriod}</p>
           </div>
           <p class="mt-2 font-body text-gray-700">
