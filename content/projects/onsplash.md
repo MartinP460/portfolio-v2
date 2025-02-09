@@ -1,6 +1,6 @@
 ---
 title: Onsplash
-intro: Onsplash is a clone/recreation of the image-sharing platform Unsplash. In addition to replicating Unsplash’s iconic gallery design, Onsplash enables users to perform CRUD operations on their own and other’s images.
+intro: Onsplash is a clone/recreation of the image-sharing platform Unsplash. In addition to replicating Unsplash’s iconic gallery design, Onsplash enables users to read and write from and to their own and other’s posts.
 tags:
   - Next.js
   - GraphQL
