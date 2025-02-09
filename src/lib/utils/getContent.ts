@@ -2,36 +2,40 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import type { Picture } from 'vite-imagetools'
-import monkey from '$lib/assets/monkey.jpg?enhanced'
 
 const contentDir = join(process.cwd(), '/content')
 
-export const getContent = <T>(type: ContentType) => {
+export const getContent = async <T>(type: ContentType) => {
   const contentTypeDir = `${contentDir}/${type}`
   const fileNames = fs.readdirSync(contentTypeDir)
 
-  const contentList = fileNames.map((fileName) => {
-    const fullPath = join(contentTypeDir, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const contentList = await Promise.all(
+    fileNames.map(async (fileName) => {
+      const fullPath = join(contentTypeDir, fileName)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-    const { data, content } = matter(fileContents)
+      const { data, content } = matter(fileContents)
 
-    return {
-      ...data,
-      ...(data?.thumbnail ? { thumbnail: convertThumbnailToPicture(data.thumbnail) } : {}),
-      content
-    } as T
-  })
+      return {
+        ...data,
+        ...(data?.thumbnail ? { thumbnail: await convertThumbnailToPicture(data.thumbnail) } : {}),
+        content
+      } as T
+    })
+  )
 
   return contentList
 }
 
-const convertThumbnailToPicture = (thumbnail: string): Picture | null => {
-  switch (thumbnail) {
-    case 'monkey.jpg':
-      return monkey
-    default:
-      return null
+const convertThumbnailToPicture = async (thumbnail: string): Promise<Picture | null> => {
+  try {
+    const image = (await import(`../../../static/${thumbnail}.jpg?enhanced`)) as unknown as {
+      default: Picture
+    }
+
+    return image.default
+  } catch {
+    throw new Error(`No image with filename \`${thumbnail}\` in /static/.`)
   }
 }
 

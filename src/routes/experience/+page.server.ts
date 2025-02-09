@@ -1,9 +1,8 @@
 import { ContentType, getContent, type Experience } from '$lib/utils/getContent'
 
-export function load() {
-  const experience = getContent<Experience>(ContentType.Experience).sort(
-    (a, b) => b.employerNumber - a.employerNumber
-  )
+export async function load() {
+  const unsortedExperience = await getContent<Experience>(ContentType.Experience)
+  const experience = unsortedExperience.sort((a, b) => b.employerNumber - a.employerNumber)
 
   return { experience }
 }

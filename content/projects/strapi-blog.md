@@ -7,7 +7,7 @@ tags:
   - Strapi
 slug: strapi-blog
 path: '/projects/strapi-blog'
-thumbnail: 'monkey.jpg'
+thumbnail: 'monkey'
 liveUrl: https://strapi-blog-ebon.vercel.app/
 repoUrl: https://github.com/MartinP460/strapi-blog
 priority: 3

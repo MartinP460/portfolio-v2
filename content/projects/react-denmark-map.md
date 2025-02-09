@@ -7,7 +7,7 @@ tags:
   - Semver
 slug: react-denmark-map
 path: /projects/react-denmark-map
-thumbnail: 'monkey.jpg'
+thumbnail: 'monkey'
 liveUrl: https://react-denmark-map.vercel.app/demo
 repoUrl: https://github.com/MartinP460/react-denmark-map
 priority: 1

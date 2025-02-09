@@ -7,7 +7,7 @@ tags:
   - Typescript
 slug: onsplash
 path: /projects/onsplash
-thumbnail: 'monkey.jpg'
+thumbnail: 'monkey'
 liveUrl: https://onsplash.vercel.app/
 repoUrl: https://github.com/MartinP460/onsplash
 priority: 2
