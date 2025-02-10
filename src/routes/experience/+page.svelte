@@ -12,15 +12,19 @@
           <div class="mb-1 hidden h-0.5 w-2 rounded bg-primary group-first:block"></div>
           <div class="mb-1 hidden h-1 w-2 rounded bg-primary group-first:block"></div>
           <div class="mb-1.5 hidden h-2 w-2 rounded-sm bg-primary group-first:block"></div>
-          <div class="mb-2 h-20 w-2 rounded-b bg-primary group-first:rounded-t-sm"></div>
           <div
-            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary font-bold text-white"
+            class="mb-2 h-20 w-2 rounded-b bg-primary transition-all group-first:rounded-t-sm group-hover:mb-3 group-hover:h-[4.5rem]"
+          ></div>
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary font-bold text-white transition-transform group-hover:scale-110"
           >
             {#if logo === 'lenus'}
               <Lenus class="ml-1 h-6 w-6 fill-white" />
             {/if}
           </div>
-          <div class="mt-2 h-28 w-2 rounded-t bg-primary group-last:rounded-b-lg"></div>
+          <div
+            class="mt-2 h-28 w-2 rounded-t bg-primary transition-all group-last:rounded-b-lg group-hover:mt-3 group-hover:h-[7.5rem]"
+          ></div>
         </div>
         <div>
           <h3 class="font-title text-xl font-bold text-black">{companyName}</h3>
