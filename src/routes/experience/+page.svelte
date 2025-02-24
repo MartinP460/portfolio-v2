@@ -4,7 +4,7 @@
   const { data } = $props()
 </script>
 
-<section class="flex h-full items-center px-3 pb-16 md:pb-48">
+<section class="flex h-full items-center px-4 pb-16 md:pb-48">
   <div class="flex w-full flex-col">
     {#each data.experience as { companyName, position, timePeriod, logo, content }}
       <div class="group flex items-center gap-4 text-gray-600 sm:gap-6">
