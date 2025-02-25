@@ -14,6 +14,3 @@
     ></div>
   </div>
 </div>
-<div
-  class="fixed -bottom-12 left-0 z-50 h-12 w-full shadow-[0px_-10px_30px_rgb(224,209,184)]"
-></div>

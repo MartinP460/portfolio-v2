@@ -14,31 +14,31 @@ export const navbarRoutes: Record<string, NavbarRoute> = {
     name: 'projects',
     href: '/projects',
     order: 2,
-    offset: 178
+    offset: 165
   },
   '/experience': {
     name: 'experience',
     href: '/experience',
     order: 3,
-    offset: 328
+    offset: 300
   },
   '/education': {
     name: 'education',
     href: '/education',
     order: 4,
-    offset: 488
+    offset: 442
   },
   '/toolbox': {
     name: 'toolbox',
     href: '/toolbox',
     order: 5,
-    offset: 633
+    offset: 573
   },
   '/about': {
     name: 'about me',
     href: '/about',
     order: 6,
-    offset: 776
+    offset: 700
   }
 }
 

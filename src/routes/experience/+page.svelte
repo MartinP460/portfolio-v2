@@ -8,22 +8,22 @@
   <div class="flex w-full flex-col">
     {#each data.experience as { companyName, position, timePeriod, logo, content }}
       <div class="group flex items-center gap-4 text-gray-600 sm:gap-6">
-        <div class="flex h-full flex-col items-center">
-          <div class="mb-1 hidden h-0.5 w-2 rounded bg-primary group-first:block"></div>
-          <div class="mb-1 hidden h-1 w-2 rounded bg-primary group-first:block"></div>
-          <div class="mb-1.5 hidden h-2 w-2 rounded-sm bg-primary group-first:block"></div>
+        <div class="flex h-full flex-col items-center [&>div]:bg-primary">
+          <div class="mb-1 hidden h-0.5 w-2 rounded-sm group-first:block"></div>
+          <div class="mb-1 hidden h-1 w-2 rounded-sm group-first:block"></div>
+          <div class="mb-1.5 hidden h-2 w-2 rounded-sm group-first:block"></div>
           <div
-            class="mb-2 h-20 w-2 rounded-b bg-primary transition-all group-first:rounded-t-sm group-hover:mb-3 group-hover:h-[4.5rem]"
+            class="mb-2 h-20 w-2 rounded-b-sm transition-all duration-300 group-first:rounded-t-sm group-hover:mb-3 group-hover:h-[4.5rem]"
           ></div>
           <div
-            class="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary font-bold text-white transition-transform group-hover:scale-110"
+            class="flex h-10 w-10 items-center justify-center rounded-lg text-white transition-transform duration-300 group-hover:scale-110"
           >
             {#if logo === 'lenus'}
               <Lenus class="ml-1 h-6 w-6 fill-white" />
             {/if}
           </div>
           <div
-            class="mt-2 h-28 w-2 rounded-t bg-primary transition-all group-last:rounded-b-lg group-hover:mt-3 group-hover:h-[7.5rem]"
+            class="mt-2 h-28 w-2 rounded-t-sm transition-all duration-300 group-last:rounded-b-sm group-hover:mt-3 group-hover:h-[7.5rem]"
           ></div>
         </div>
         <div>

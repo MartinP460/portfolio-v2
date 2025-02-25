@@ -9,15 +9,18 @@ export default {
     extend: {
       colors: {
         primary: '#283f13',
-        background: '#e0d1b8',
+        background: '#ffffff',
+        // background: '#e0d1b8',
         'text-foreground': colors.gray[800],
         'text-background': colors.gray[600]
       }
     },
     fontFamily: {
       // We ensure fonts with spaces have " " surrounding it.
-      title: ['"Fuzzy Bubbles"', 'sans-serif'],
-      body: ['"Josefin Sans"', 'serif']
+      title: ['"DM Serif Text"', 'sans-serif'],
+      body: ['"DM Sans"', 'serif']
+      // title: ['"Fuzzy Bubbles"', 'sans-serif'],
+      //body: ['"Josefin Sans"', 'serif']
     }
   },
 

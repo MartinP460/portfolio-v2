@@ -8,7 +8,7 @@
       <li class="group">
         <a
           href={path}
-          class="flex flex-col-reverse items-center justify-between gap-6 rounded-xl px-4 py-3 transition-colors group-hover:bg-white/20 sm:flex-row lg:gap-16"
+          class="flex flex-col-reverse items-center justify-between gap-6 rounded-xl px-4 py-3 sm:flex-row lg:gap-16"
         >
           <div class="animate-fade-in animate-delay-2 flex flex-col">
             <p class="mt-2 font-title text-4xl font-bold">
@@ -25,7 +25,7 @@
               {/each}
             </div>
           </div>
-          <div class="transition-transform group-hover:scale-125">
+          <div class="transition-transform ease-in group-hover:scale-110">
             <enhanced:img
               src={thumbnail}
               alt="Hello"

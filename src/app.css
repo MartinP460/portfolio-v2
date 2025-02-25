@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 /* Importing Fuzzy bubbles (titles) and Josefin Sans (body). */
-@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Fuzzy+Bubbles:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root {
   /* Disable default page view transitions. */

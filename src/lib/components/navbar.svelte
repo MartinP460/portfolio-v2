@@ -21,19 +21,14 @@
 
       <DropdownMenu.Content class="fixed !left-0 !top-0 z-10 !mt-0 h-full w-full">
         <div
-          class="flex h-full w-full flex-col justify-center bg-white/20 shadow-sm backdrop-blur-md"
+          class="flex h-full w-full flex-col justify-center bg-white/20 font-body shadow-sm backdrop-blur-md"
           transition:fly
         >
           <nav class="mx-16 flex flex-col gap-5">
-            <a href="/" class="inline-flex w-full items-center justify-between font-title text-xl">
-              Home
-            </a>
+            <a href="/" class="inline-flex w-full items-center justify-between text-xl"> Home </a>
             {#each navbarRoutesArray as { name, href }}
               <DropdownMenu.Item>
-                <a
-                  {href}
-                  class="inline-flex w-full items-center justify-between font-title text-xl"
-                >
+                <a {href} class="inline-flex w-full items-center justify-between text-xl">
                   {name}
                   {#if navbarRoutes[path]?.name === name}
                     <div class="h-2 w-2 rounded-full bg-primary"></div>
@@ -51,12 +46,12 @@
   </div>
 
   <nav class="hidden lg:block">
-    <ul class="flex text-lg text-gray-600">
-      <li class="px-8 font-title transition-[font-size] hover:text-xl">
+    <ul class="flex font-body text-gray-600 [&>li]:px-8 [&>li]:transition-transform [&>li]:ease-in">
+      <li class="hover:scale-105">
         <a href="/">home</a>
       </li>
       {#each navbarRoutesArray as { name, href }}
-        <li class="px-8 font-title transition-[font-size] hover:text-xl">
+        <li class="hover:scale-105">
           <a {href}>
             {name}
           </a>

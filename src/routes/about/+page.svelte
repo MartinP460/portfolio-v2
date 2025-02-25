@@ -12,7 +12,7 @@
   <enhanced:img
     src={thumbnail}
     alt="Hello"
-    class="h-52 w-52 rounded-2xl object-cover sm:h-52 sm:w-52 sm:min-w-52"
+    class="h-52 w-52 rounded-full object-cover sm:h-52 sm:w-52 sm:min-w-52"
   />
   <p class="font-body leading-6 [&>p]:my-2">
     <SvelteMarkdown source={content} />
