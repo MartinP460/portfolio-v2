@@ -35,7 +35,7 @@
             <div class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:block"></div>
             <p>{timePeriod}</p>
           </div>
-          <p class="mt-2 font-body text-gray-700">
+          <p class="mt-2 font-body text-gray-800">
             {content}
           </p>
         </div>

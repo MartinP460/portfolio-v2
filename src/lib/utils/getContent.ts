@@ -66,8 +66,18 @@ export type About = {
   thumbnail: Picture
 }
 
+export type Education = {
+  institutionName: string
+  educationName: string
+  years: string
+  coursesTaken: string[]
+  thesisTopic: string
+  thesisTitle: string
+}
+
 export enum ContentType {
   Experience = 'experience',
   Projects = 'projects',
-  About = 'about'
+  About = 'about',
+  Education = 'education'
 }
