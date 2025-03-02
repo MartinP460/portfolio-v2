@@ -4,7 +4,7 @@ export type NavbarRoute = {
   /** The href of the route. */
   href: string
   /** The order which it appears in. */
-  order: 1 | 2 | 3 | 4 | 5 | 6
+  order: 1 | 2 | 3 | 4 | 5
   /** The pixel offset of the active indicator in the navbar. */
   offset: number
 }
@@ -28,17 +28,11 @@ export const navbarRoutes: Record<string, NavbarRoute> = {
     order: 4,
     offset: 442
   },
-  '/toolbox': {
-    name: 'toolbox',
-    href: '/toolbox',
-    order: 5,
-    offset: 573
-  },
   '/about': {
     name: 'about me',
     href: '/about',
-    order: 6,
-    offset: 700
+    order: 5,
+    offset: 580
   }
 }
 
