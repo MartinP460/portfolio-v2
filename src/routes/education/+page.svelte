@@ -6,7 +6,9 @@
   const education = data.education[0]
 </script>
 
-<section class="flex h-full flex-col justify-center px-4 pb-16 font-body text-gray-800 md:pb-48">
+<section
+  class="flex h-full flex-col justify-center px-4 pb-16 font-body text-gray-800 md:pb-48 lg:ml-24"
+>
   <div class="group">
     <Ucph class="h-16 w-16 transition-transform duration-300 group-hover:scale-110" />
     <h1 class="mt-4 font-title text-2xl font-bold text-black">{education.educationName}</h1>
