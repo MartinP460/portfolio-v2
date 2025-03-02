@@ -1,4 +1,5 @@
 <script>
+  import Socials from '$lib/components/socials.svelte'
   import { navbarRoutesArray } from '$lib/utils/navbarRoutes'
 </script>
 
@@ -12,12 +13,13 @@
   </div>
 
   <div
-    class="animate-fade-in-top animate-delay-4 mt-10 flex flex-col gap-8 text-3xl lg:mt-20 lg:flex-row lg:gap-14 lg:text-lg"
+    class="animate-fade-in-top animate-delay-2 mt-10 flex flex-col gap-8 text-3xl lg:mt-20 lg:flex-row lg:gap-14 lg:text-lg"
   >
     {#each navbarRoutesArray as { name, href }}
-      <a {href} class="font-body text-gray-700 transition-transform ease-in lg:hover:scale-105"
-        >{name}</a
-      >
+      <a {href} class="font-body text-gray-700 transition-transform ease-in lg:hover:scale-105">
+        {name}
+      </a>
     {/each}
   </div>
+  <Socials class="animate-fade-in-top animate-delay-4 mt-16" />
 </div>
