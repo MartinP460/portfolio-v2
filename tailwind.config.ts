@@ -10,7 +10,6 @@ export default {
       colors: {
         primary: '#283f13',
         background: '#ffffff',
-        // background: '#e0d1b8',
         'text-foreground': colors.gray[800],
         'text-background': colors.gray[600]
       }
@@ -19,8 +18,6 @@ export default {
       // We ensure fonts with spaces have " " surrounding it.
       title: ['"DM Serif Text"', 'sans-serif'],
       body: ['"DM Sans"', 'serif']
-      // title: ['"Fuzzy Bubbles"', 'sans-serif'],
-      //body: ['"Josefin Sans"', 'serif']
     }
   },
 

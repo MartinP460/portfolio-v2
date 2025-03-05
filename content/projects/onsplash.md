@@ -36,7 +36,7 @@ In summary, the main motivations for creating the project were:
 
 Organizing how to execute a project is one of the most important aspects of creating any larger project. One integral management tool I used to organize the project was a [kanban board](https://www.atlassian.com/agile/kanban/boards). The kanban board I used (and continue to use for most of my projects) is a simple 3-column board with the columns "to-do", "in progress" and "completed", and in this way I was able to keep track of what I was working on and what I had completed.
 
-![Photo of kanban board](/images/kanban-board.png)
+![Photo of kanban board](/kanban-board.png)
 
 The nature of kanban board allows for multiple people to collaborate, hence the popularity of these boards within agile project management. However, it's also beneficial for a single developer to organize what needs to be done and when.
 

@@ -50,6 +50,7 @@ export type Project = {
   liveUrl: string
   repoUrl: string
   priority: number
+  content: string
 }
 
 export type Experience = {
