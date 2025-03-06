@@ -4,7 +4,8 @@ intro: React Denmark Map is a library for React that allows developers to displa
 tags:
   - React
   - Typescript
-  - Semver
+  - Rollup
+  - Jest
 slug: react-denmark-map
 path: /projects/react-denmark-map
 thumbnail: 'monkey'

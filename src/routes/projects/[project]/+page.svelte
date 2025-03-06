@@ -5,7 +5,7 @@
 
   let { data }: PageProps = $props()
 
-  const { title, thumbnail, slug, intro, liveUrl, repoUrl, content } = data
+  const { title, thumbnail, slug, intro, liveUrl, repoUrl, tags, content } = data
 
   const regexHeaders = /#{1,6}.+/g
   const headers: string[] | null = content.match(regexHeaders)
@@ -50,18 +50,29 @@
     </a>
   </div>
   <div class="animate-fade-in animate-delay-4 relative my-12">
-    {#if headerObjects}
-      <ul class="absolute right-[-16.5rem] flex flex-col gap-y-2 text-sm text-gray-400">
-        {#each headerObjects as header}
-          <li
-            style="margin-left:{(header.level - 3) * 10}px;"
-            class="transition-colors hover:text-gray-700"
-          >
-            <a href="#{header.id}">{header.title}</a>
-          </li>
+    <div class="absolute right-[-16.5rem] w-[16.5rem] pl-5">
+      {#if headerObjects}
+        <ul class="flex flex-col gap-y-2 text-sm text-gray-400">
+          {#each headerObjects as header}
+            <li
+              style="margin-left:{(header.level - 3) * 10}px;"
+              class="transition-colors hover:text-gray-700"
+            >
+              <a href="#{header.id}">{header.title}</a>
+            </li>
+          {/each}
+        </ul>
+      {/if}
+      <ul class="mt-8 flex flex-wrap items-center gap-y-1">
+        {#each tags as tag}
+          <div class="group flex items-center">
+            <li class="inline rounded-lg text-xs text-gray-400">{tag}</li>
+            <span class="mx-2 hidden h-1 w-1 rounded-full bg-gray-300 group-last:hidden sm:inline">
+            </span>
+          </div>
         {/each}
       </ul>
-    {/if}
+    </div>
     <article class="prose mx-auto w-full max-w-xl [&>p>img]:rounded">
       <SvelteMarkdown source={content} />
     </article>

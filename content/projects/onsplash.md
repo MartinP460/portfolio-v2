@@ -2,9 +2,13 @@
 title: Onsplash
 intro: Onsplash is a clone/recreation of the image-sharing platform Unsplash. In addition to replicating Unsplash’s iconic gallery design, Onsplash enables users to read and write from and to their own and other’s posts.
 tags:
-  - Next.js
-  - GraphQL
   - Typescript
+  - GraphQL
+  - React
+  - Next.js
+  - TailwindCSS
+  - Nhost
+  - Hasura
 slug: onsplash
 path: /projects/onsplash
 thumbnail: 'monkey'
@@ -132,7 +136,7 @@ const splitArrayToThreeNestedArrays = (arr) => {
 }
 ```
 
-The function initiates two arrays - one is an array of three nested arrays for the result, and the other is an array of heights representing the height of each column. The function then loops over the array of posts (the array has to be an array of posts) and initially finds the shortest column, which is the index of the smallest integer within the `heights` array. This index is then stored as `lowestNestedArrayIndex`. The image object in the current iteration is then appended to the nested array within the `result` array. Lastly, the height of the column is updated to account for how much height the new image adds to the column. This column is `heights[lowestNestedArrayIndex]`. On the next iteration, a new column will then be the shortest and another image is appended to that column. This results in each column having roughly the same height:
+The function instantiates two arrays - one is an array of three nested arrays for the result, and the other is an array of heights representing the height of each column. The function then loops over the array of posts (the array has to be an array of posts) and initially finds the shortest column, which is the index of the smallest integer within the `heights` array. This index is then stored as `lowestNestedArrayIndex`. The image object in the current iteration is then appended to the nested array within the `result` array. Lastly, the height of the column is updated to account for how much height the new image adds to the column. This column is `heights[lowestNestedArrayIndex]`. On the next iteration, a new column will then be the shortest and another image is appended to that column. This results in each column having roughly the same height:
 
 ![Gallery without the visual glitch](/images/unsplash-gallery-without-glitch.png)
 
