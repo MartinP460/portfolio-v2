@@ -30,7 +30,9 @@ export const getContent = async <T>(type: ContentType) => {
 const convertThumbnailToPicture = async (thumbnail: string): Promise<Picture | null> => {
   try {
     // Note that Vite requires that we use a relative import and that it ends with a file extension.
-    const image = (await import(`../../../static/${thumbnail}.jpg?enhanced`)) as unknown as {
+    const image = (await import(
+      `../../../static/thumbnails/${thumbnail}.jpg?enhanced`
+    )) as unknown as {
       default: Picture
     }
 
