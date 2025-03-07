@@ -1,22 +1,10 @@
 <script lang="ts">
-  import SvelteMarkdown from '@humanspeak/svelte-markdown'
   import type { PageProps } from './$types'
   import { IconArrowBack, IconExternalLink } from '@tabler/icons-svelte'
 
   let { data }: PageProps = $props()
 
-  const { title, thumbnail, slug, intro, liveUrl, repoUrl, tags, content } = data
-
-  const regexHeaders = /#{1,6}.+/g
-  const headers: string[] | null = content.match(regexHeaders)
-  const headerObjects = headers?.map((header) => ({
-    title: header.replace(/^#+\s*/, ''),
-    level: (header.match(/#/g) || []).length,
-    id: header
-      .replace(/^#+\s*/, '')
-      .toLowerCase()
-      .replaceAll(' ', '-')
-  }))
+  const { title, thumbnail, slug, intro, liveUrl, repoUrl, tags, content, tableOfContents } = data
 </script>
 
 <div class="mt-12 flex flex-col items-center justify-center font-body">
@@ -51,9 +39,9 @@
   </div>
   <div class="animate-fade-in animate-delay-4 relative my-12">
     <div class="absolute right-[-16.5rem] w-[16.5rem] pl-5">
-      {#if headerObjects}
+      {#if tableOfContents.length > 0}
         <ul class="flex flex-col gap-y-2 text-sm text-gray-400">
-          {#each headerObjects as header}
+          {#each tableOfContents as header}
             <li
               style="margin-left:{(header.level - 3) * 10}px;"
               class="transition-colors hover:text-gray-700"
@@ -74,7 +62,7 @@
       </ul>
     </div>
     <article class="prose mx-auto w-full max-w-xl [&>p>img]:rounded">
-      <SvelteMarkdown source={content} />
+      {@html content}
     </article>
   </div>
 </div>

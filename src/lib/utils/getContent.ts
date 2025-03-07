@@ -2,8 +2,23 @@ import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
 import type { Picture } from 'vite-imagetools'
+import { Marked } from 'marked'
+import { markedHighlight } from 'marked-highlight'
+import hljs from 'highlight.js'
+import { gfmHeadingId } from 'marked-gfm-heading-id'
 
 const contentDir = join(process.cwd(), '/content')
+
+const marked = new Marked(
+  markedHighlight({
+    emptyLangClass: 'hljs',
+    langPrefix: 'hljs language-',
+    highlight(code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : 'plaintext'
+      return hljs.highlight(code, { language }).value
+    }
+  })
+).use(gfmHeadingId())
 
 export const getContent = async <T>(type: ContentType) => {
   const contentTypeDir = `${contentDir}/${type}`
@@ -15,16 +30,33 @@ export const getContent = async <T>(type: ContentType) => {
       const fileContents = fs.readFileSync(fullPath, 'utf8')
 
       const { data, content } = matter(fileContents)
+      const htmlContent = marked.parse(content)
 
       return {
         ...data,
         ...(data?.thumbnail ? { thumbnail: await convertThumbnailToPicture(data.thumbnail) } : {}),
-        content
+        content: htmlContent,
+        tableOfContents: type === ContentType.Projects ? getTableOfContents(content) : undefined
       } as T
     })
   )
 
   return contentList
+}
+
+const getTableOfContents = (markdown: string) => {
+  const regexHeaders = /#{1,6}.+/g
+  const headers: string[] | null = markdown.match(regexHeaders)
+  return (
+    headers?.map((header) => ({
+      title: header.replace(/^#+\s*/, ''),
+      level: (header.match(/#/g) || []).length,
+      id: header
+        .replace(/^#+\s*/, '')
+        .toLowerCase()
+        .replaceAll(' ', '-')
+    })) ?? []
+  )
 }
 
 const convertThumbnailToPicture = async (thumbnail: string): Promise<Picture | null> => {
@@ -53,6 +85,11 @@ export type Project = {
   repoUrl: string
   priority: number
   content: string
+  tableOfContents: {
+    id: string
+    title: string
+    level: number
+  }[]
 }
 
 export type Experience = {
