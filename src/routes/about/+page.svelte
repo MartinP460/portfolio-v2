@@ -1,6 +1,5 @@
 <script lang="ts">
   import Socials from '$lib/components/socials.svelte'
-  import SvelteMarkdown from '@humanspeak/svelte-markdown'
 
   const { data } = $props()
 
@@ -20,7 +19,7 @@
       </div>
     </div>
     <p class="font-body leading-6 [&>p]:my-2">
-      <SvelteMarkdown source={content} />
+      {@html content}
     </p>
   </div>
 </section>

@@ -36,7 +36,7 @@
             <p>{timePeriod}</p>
           </div>
           <p class="mt-2 font-body text-gray-800">
-            {content}
+            {@html content}
           </p>
         </div>
       </div>
