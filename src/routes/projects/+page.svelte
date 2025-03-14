@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { IconArrowForwardUp, IconExternalLink } from '@tabler/icons-svelte'
+  import { IconArrowForwardUp } from '@tabler/icons-svelte'
 
   const { data } = $props()
 </script>
 
-<div class="mt-4">
-  <ul class="flex h-full w-full flex-col gap-6">
+<div class="mt-4 flex flex-col items-center font-body">
+  <ul class="flex h-full w-full flex-col gap-2">
     {#each data.projects as { path, title, intro, thumbnail, slug }}
       <li class="group">
         <a
@@ -16,7 +16,7 @@
             <p class="mt-2 font-title text-4xl font-bold">
               {title}
             </p>
-            <p class="mt-1 font-body text-gray-700">
+            <p class="mt-1 text-gray-700">
               {intro}
             </p>
             <span class="mt-2 inline-flex items-center gap-x-1 sm:mt-1">
@@ -25,19 +25,12 @@
                 class="w-4 text-primary transition-transform ease-in group-hover:translate-x-1"
               />
             </span>
-            <!-- <div class="mt-2 flex gap-2">
-              {#each tags as tag}
-                <div class="rounded bg-primary px-2 py-1 font-body text-xs text-white">
-                  {tag}
-                </div>
-              {/each}
-            </div> -->
           </div>
-          <div class="transition-transform ease-in group-hover:scale-110">
+          <div class="transition-transform ease-in group-hover:scale-105">
             <enhanced:img
               src={thumbnail}
-              alt="Hello"
-              class="page-transition-thumbnail -z-20 h-52 w-52 rounded object-cover sm:h-36 sm:w-36 sm:min-w-36"
+              alt="Thumbnail image of {title}"
+              class="page-transition-thumbnail -z-20 h-52 w-52 rounded object-cover sm:h-32 sm:w-32 sm:min-w-32"
               style:--thumbnail="image-{slug}"
             />
           </div>
@@ -45,6 +38,12 @@
       </li>
     {/each}
   </ul>
+  <a
+    href="/projects/all"
+    class="animate-fade-in animate-delay-2 mt-4 text-lg text-primary hover:underline"
+  >
+    All projects
+  </a>
 </div>
 
 <style>

@@ -1,2 +1,0 @@
-export const TRANSITION_DURATION = 200
-export const TRANSITION_DELAY = 250

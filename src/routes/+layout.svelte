@@ -1,19 +1,15 @@
 <script lang="ts">
   import '../app.css'
-  import { onNavigate } from '$app/navigation'
-
-  import { navbarRoutesNames } from '$lib/utils/navbarRoutes'
+  import { beforeNavigate, onNavigate } from '$app/navigation'
   import Background from '$lib/components/background.svelte'
   import Navbar from '$lib/components/navbar.svelte'
+  import BodyTransition from '$lib/components/body-transition.svelte'
+  import { updatePageTransition } from '$lib/utils/pageTransitions.svelte'
   import NavbarTransition from '$lib/components/navbar-transition.svelte'
-  import HomeTransition from '$lib/components/home-transition.svelte'
 
-  let { data, children } = $props()
+  let { children } = $props()
 
-  let paths = $derived(data.path.split('/'))
-
-  let firstLevelRoute = $derived(`/${paths[1]}`)
-  let secondLevelRoute = $derived(paths.length > 2 ? `/${paths[2]}` : null)
+  let innerWidth = $state<number | null>(null)
 
   onNavigate((navigation) => {
     if (!document.startViewTransition) return
@@ -25,20 +21,22 @@
       })
     })
   })
+
+  beforeNavigate(({ from, to }) =>
+    updatePageTransition(from?.route.id ?? '', to?.route.id ?? '', {
+      isMobile: (innerWidth ?? 601) < 600
+    })
+  )
 </script>
+
+<svelte:window bind:innerWidth />
 
 <Background />
 <div class="h-[var(--navbar-height)]">
-  {#if firstLevelRoute !== '/' && !secondLevelRoute}
-    <HomeTransition>
-      <Navbar path={firstLevelRoute} />
-    </HomeTransition>
-  {/if}
+  <NavbarTransition>
+    <Navbar />
+  </NavbarTransition>
 </div>
 <main class="container mx-auto h-[calc(100%-var(--navbar-height))] max-w-3xl">
-  {#if firstLevelRoute === '/'}
-    <HomeTransition>{@render children()}</HomeTransition>
-  {:else if navbarRoutesNames.includes(firstLevelRoute)}
-    <NavbarTransition path={firstLevelRoute}>{@render children()}</NavbarTransition>
-  {/if}
+  <BodyTransition>{@render children()}</BodyTransition>
 </main>

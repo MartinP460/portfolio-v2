@@ -1,14 +1,13 @@
 <script lang="ts">
+  import { page } from '$app/state'
   import { quadIn, quadOut } from 'svelte/easing'
   import { fly } from 'svelte/transition'
   import { DropdownMenu } from 'bits-ui'
   import { IconChevronDown } from '@tabler/icons-svelte'
   import { navbarRoutes, navbarRoutesArray, navbarRoutesNames } from '$lib/utils/navbarRoutes'
-  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/transitions'
+  import { TRANSITION_DELAY, TRANSITION_DURATION } from '$lib/utils/pageTransitions.svelte'
 
-  type NavbarProps = { path: string }
-
-  let { path }: NavbarProps = $props()
+  let path = $derived(`/${page.route.id?.split('/')[1]}`)
 </script>
 
 <header class="flex grid-flow-dense items-center justify-center p-8">

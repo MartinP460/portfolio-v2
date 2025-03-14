@@ -21,9 +21,7 @@
       <p class="mt-4 text-gray-600">
         {intro}
       </p>
-      <div
-        class="mt-4 flex gap-x-3 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1 [&>a]:transition-all"
-      >
+      <div class="mt-4 flex gap-x-3 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1">
         <a href={liveUrl} class="hover:underline">Live preview <IconExternalLink class="w-4" /></a>
         <a href={repoUrl} class="hover:underline">Repository <IconExternalLink class="w-4" /></a>
       </div>
