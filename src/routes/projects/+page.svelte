@@ -40,7 +40,7 @@
   </ul>
   <a
     href="/projects/all"
-    class="animate-fade-in animate-delay-2 mt-4 text-lg text-primary hover:underline"
+    class="animate-fade-in animate-delay-2 mb-3 mt-4 text-lg text-primary hover:underline"
   >
     All projects
   </a>
