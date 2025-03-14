@@ -16,7 +16,7 @@
             class="mb-2 h-20 w-2 rounded-b-sm transition-all duration-300 group-first:rounded-t-sm group-hover:mb-3 group-hover:h-[4.5rem]"
           ></div>
           <div
-            class="flex h-10 w-10 items-center justify-center rounded-lg text-white transition-transform duration-300 group-hover:scale-110"
+            class="flex h-10 w-10 items-center justify-center rounded-full text-white transition-transform duration-300 group-hover:scale-110"
           >
             {#if logo === 'lenus'}
               <Lenus class="ml-1 h-6 w-6 fill-white" />
