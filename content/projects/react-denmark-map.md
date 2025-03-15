@@ -23,10 +23,10 @@ In its simplest form, react-denmark-map is a library that enables React develope
 
 Without going into too much detail, the benefits of using react-denmark-map as opposed to making your own SVG is that it allows developers to:
 
-1. not make their own SVG of Denmark (which is typically a lot of work).
-2. programmatically customize the map so that you don't have to manually create the relevant SVG's. This also enables using data from a web API where the data is not static.
+1. avoid the hassle of creating or finding their own SVG of Denmark (which can be a lot of work).
+2. programmatically customize the map instead of creating many different, individual SVG's. This also enables using data from some API where the data is not static.
 3. pick between outlining municipalities, regions, islands or a full map of Denmark.
-4. Customize the colors of each area (i.e. municipality, region, island or the full map of Denmark), e.g. to display relevant data in each municipality.
+4. Customize the colors of each area (i.e. municipality, region, island or the full map of Denmark), e.g. to display relevant data in each area.
 5. Customize a tooltip that appears when hovering over an area.
 
 As such, you can, without much hassle, have a map of Denmark that e.g. displays the population of each municipality where the higher the population, the darker the shade is. You can see such an example [in the demo](https://react-denmark-map.vercel.app/demo).

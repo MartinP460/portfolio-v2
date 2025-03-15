@@ -12,7 +12,7 @@
   let isNavbarDialogOpen = $state(false)
 
   $effect(() => {
-    if (path) isNavbarDialogOpen = false
+    if (page.route.id) isNavbarDialogOpen = false
   })
 </script>
 

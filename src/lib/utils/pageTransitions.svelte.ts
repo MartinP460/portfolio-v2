@@ -36,9 +36,12 @@ export const updatePageTransition = (from: string, to: string, options: { isMobi
     case '/ /experience':
     case '/ /education':
     case '/ /about':
-    case '/projects /projects/all':
       setNavbarTransition('flyInTop')
       setBodyTransition('flyInTop')
+      break
+    case '/projects /projects/all':
+      setNavbarTransition(isMobile ? 'disabled' : 'flyInTop')
+      setBodyTransition(isMobile ? 'disabled' : 'flyInTop')
       break
     case '/projects /':
     case '/experience /':
