@@ -7,14 +7,20 @@
   const { title, thumbnail, slug, intro, liveUrl, repoUrl, tags, content, tableOfContents } = data
 </script>
 
-<div class="mt-12 flex flex-col items-center justify-center font-body">
-  <div class="flex w-[145%] gap-x-20">
-    <div class="animate-fade-in animate-delay-2 relative ml-12 flex flex-1 flex-col justify-center">
-      <div class="relative flex items-center">
-        <a href="/projects" class="absolute -left-12 transition-transform hover:scale-105">
+<div class="flex flex-col items-center justify-center font-body lg:mt-12">
+  <div class="flex flex-col-reverse gap-x-20 px-8 lg:w-[145%] lg:flex-row lg:px-16 xl:px-0">
+    <div
+      class="animate-fade-in animate-delay-2 relative mt-6 flex flex-1 flex-col justify-center lg:ml-12"
+    >
+      <div class="relative flex flex-col lg:flex-row lg:items-center">
+        <a
+          href="/projects"
+          class="flex gap-x-2 text-primary transition-transform hover:underline lg:absolute lg:-left-12 lg:hover:scale-105"
+        >
           <IconArrowBack />
+          <p class="lg:hidden">Projects</p>
         </a>
-        <h1 class="font-title text-4xl font-bold">
+        <h1 class="mt-2 font-title text-4xl font-bold lg:mt-0">
           {title}
         </h1>
       </div>
@@ -26,19 +32,19 @@
         <a href={repoUrl} class="hover:underline">Repository <IconExternalLink class="w-4" /></a>
       </div>
     </div>
-    <a href="/projects" aria-label={title} class="flex justify-end">
+    <a href="/projects" aria-label={title} class="flex justify-center lg:justify-end">
       <enhanced:img
         src={thumbnail}
         alt="Hello"
-        class="page-transition-thumbnail aspect-square w-96 rounded object-cover"
+        class="page-transition-thumbnail aspect-[16/12] rounded object-cover lg:aspect-square lg:h-96 lg:w-96"
         style:--thumbnail="image-{slug}"
       />
     </a>
   </div>
   <div class="animate-fade-in animate-delay-4 relative my-12">
-    <div class="absolute right-[-16.5rem] w-[16.5rem] pl-5">
+    <div class="px-8 sm:px-0 lg:absolute lg:right-[-16.5rem] lg:w-[16.5rem] lg:pl-5">
       {#if tableOfContents.length > 0}
-        <ul class="flex flex-col gap-y-2 text-sm text-gray-400">
+        <ul class="flex flex-col gap-y-2 text-base text-gray-500 lg:text-sm lg:text-gray-400">
           {#each tableOfContents as header}
             <li
               style="margin-left:{(header.level - 3) * 10}px;"
@@ -52,14 +58,15 @@
       <ul class="mt-8 flex flex-wrap items-center gap-y-1">
         {#each tags as tag}
           <div class="group flex items-center">
-            <li class="inline rounded-lg text-xs text-gray-400">{tag}</li>
-            <span class="mx-2 hidden h-1 w-1 rounded-full bg-gray-300 group-last:hidden sm:inline">
-            </span>
+            <li class="inline rounded-lg text-sm text-gray-400 lg:text-xs">{tag}</li>
+            <span class="mx-2 h-1 w-1 rounded-full bg-gray-300 group-last:hidden"> </span>
           </div>
         {/each}
       </ul>
     </div>
-    <article class="prose mx-auto w-full max-w-xl [&>p>img]:rounded">
+    <article
+      class="prose mx-auto mt-8 w-full max-w-xl px-6 sm:px-0 lg:mt-0 [&>p>img]:rounded [&>pre>code]:block [&>pre>code]:overflow-x-auto [&>pre>code]:px-4 [&>pre]:w-[calc(100vw-3rem)] [&>pre]:sm:max-w-xl"
+    >
       {@html content}
     </article>
   </div>

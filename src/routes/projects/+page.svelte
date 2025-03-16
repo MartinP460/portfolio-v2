@@ -30,7 +30,7 @@
             <enhanced:img
               src={thumbnail}
               alt="Thumbnail image of {title}"
-              class="page-transition-thumbnail -z-20 h-52 w-full rounded object-cover sm:h-32 sm:w-32 sm:min-w-32"
+              class="page-transition-thumbnail -z-20 aspect-[16/12] h-52 w-full rounded object-cover sm:h-32 sm:w-32 sm:min-w-32 lg:aspect-square"
               style:--thumbnail="image-{slug}"
             />
           </div>
