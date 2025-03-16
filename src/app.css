@@ -18,6 +18,10 @@ body {
   height: 100%;
 }
 
+::selection {
+  background-color: rgba(54, 82, 29, 0.273);
+}
+
 /* Fade-in animations. */
 
 @keyframes fade-in {
