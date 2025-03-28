@@ -1,10 +1,15 @@
 <script lang="ts">
   import Socials from '$lib/components/socials.svelte'
+  import { createPageTitle } from '$lib/utils/createPageTitle.js'
 
   const { data } = $props()
 
   const { thumbnail, content } = data.about
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('About')}</title>
+</svelte:head>
 
 <section class="flex h-full flex-col items-center justify-center px-4 md:pb-48">
   <div class="flex flex-col-reverse items-center justify-center gap-x-12 gap-y-8 sm:flex-row">

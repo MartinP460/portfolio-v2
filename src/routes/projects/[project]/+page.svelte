@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { createPageTitle } from '$lib/utils/createPageTitle'
   import type { PageProps } from './$types'
   import { IconArrowBack, IconExternalLink } from '@tabler/icons-svelte'
 
@@ -6,6 +7,10 @@
 
   const { title, thumbnail, slug, intro, liveUrl, repoUrl, tags, content, tableOfContents } = data
 </script>
+
+<svelte:head>
+  <title>{createPageTitle(title)}</title>
+</svelte:head>
 
 <div class="flex flex-col items-center justify-center font-body lg:mt-12">
   <div class="flex flex-col-reverse gap-x-20 px-8 lg:w-[145%] lg:flex-row lg:px-16 xl:px-0">

@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { createPageTitle } from '$lib/utils/createPageTitle'
   import { IconArrowForwardUp, IconExternalLink } from '@tabler/icons-svelte'
 
   const { data } = $props()
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('Projects')}</title>
+</svelte:head>
 
 <div class="mt-4 flex flex-col items-center px-8 font-body">
   <a href="/projects" class="mt-4 text-lg text-primary hover:underline">Highlighted projects</a>

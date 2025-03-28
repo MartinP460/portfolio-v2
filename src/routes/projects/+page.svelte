@@ -1,8 +1,13 @@
 <script lang="ts">
+  import { createPageTitle } from '$lib/utils/createPageTitle'
   import { IconArrowForwardUp } from '@tabler/icons-svelte'
 
   const { data } = $props()
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('Projects')}</title>
+</svelte:head>
 
 <div class="flex flex-col items-center px-8 font-body">
   <ul class="flex h-full w-full flex-col gap-8 sm:gap-4">

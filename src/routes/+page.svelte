@@ -1,7 +1,12 @@
 <script>
   import Socials from '$lib/components/socials.svelte'
+  import { createPageTitle } from '$lib/utils/createPageTitle'
   import { navbarRoutesArray } from '$lib/utils/navbarRoutes'
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('Portfolio')}</title>
+</svelte:head>
 
 <div
   class="mx-auto flex max-w-screen-lg flex-col justify-between px-6 font-body lg:h-4/6 lg:items-center lg:justify-center"

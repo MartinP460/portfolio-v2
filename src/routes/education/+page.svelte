@@ -1,10 +1,15 @@
 <script lang="ts">
   import Ucph from '$lib/components/icons/ucph.svelte'
+  import { createPageTitle } from '$lib/utils/createPageTitle'
 
   const { data } = $props()
 
   const education = data.education[0]
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('Education')}</title>
+</svelte:head>
 
 <section
   class="flex h-full flex-col justify-center px-4 pb-16 font-body text-gray-800 md:pb-48 lg:ml-24"

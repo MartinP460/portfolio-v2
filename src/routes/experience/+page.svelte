@@ -1,8 +1,13 @@
 <script lang="ts">
   import Lenus from '$lib/components/icons/lenus.svelte'
+  import { createPageTitle } from '$lib/utils/createPageTitle'
 
   const { data } = $props()
 </script>
+
+<svelte:head>
+  <title>{createPageTitle('Experience')}</title>
+</svelte:head>
 
 <section class="flex h-full items-center px-4 pb-16 md:pb-48">
   <div class="flex w-full flex-col">
