@@ -11,7 +11,7 @@
   <title>{createPageTitle('About')}</title>
 </svelte:head>
 
-<section class="flex h-full flex-col items-center justify-center px-4 md:pb-48">
+<section class="flex flex-col items-center justify-center px-4 pb-16 md:h-full md:pb-48">
   <div class="flex flex-col-reverse items-center justify-center gap-x-12 gap-y-8 sm:flex-row">
     <div class="flex flex-col items-center">
       <enhanced:img
