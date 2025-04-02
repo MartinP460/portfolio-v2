@@ -15,8 +15,8 @@ priority: 1
 ---
 
 <div class="callout">
-<span class="callout-title">2024 update</span>
-Since the release of this post in November, 2022, a lot of things have happened with react-denmark-map. <a href="https://github.com/MartinP460/react-denmark-map/discussions/49">2.0 has been released</a>, and in light of that, the library has gotten another maintainer! As such, I've had the responsibility (and privilege!) to lead the development of the library in our two-man army. Moreover, the library has been taken into production, for example at <a href="https://diabetestal.nu/">diabetestal.nu</a>, and that's super exciting and I'm very grateful!
+<span class="callout-title">2025 update</span>
+Since the initial release of this post in November, 2022, a lot of things have happened with react-denmark-map. <a href="https://github.com/MartinP460/react-denmark-map/discussions/49">2.0 has been released</a> and several people have contributed to the library. In light of that, I've had the responsibility and privilege to lead the development and direction of the library. Moreover, the library has been taken into production, for example at <a href="https://diabetestal.nu/">diabetestal.nu</a>, which is something I'm very grateful for.
 </div>
 
 In its simplest form, react-denmark-map is a library that enables React developers to display an SVG of Denmark. It has a bunch of features on top of just displaying a SVG which is what makes it special.
@@ -215,7 +215,7 @@ I omitted Typescript and parts of the code for brevity but you can find the fini
 
 I will continue to maintain the library by fixing bugs and adding new features. I've already identified a bug that I will fix in the next release. I also want to add `onMouseEnter` and `onMouseLeave` props to the component since this will give the developer more flexibility. However, this is a relatively small library so it's limited how many improvements can be made to it. (Update: `onMouseEnter` and `onMouseLeave` props were added in v1.1).
 
-### Learnings I can use in the future
+### Learning lessons
 
 Learning how to set up and develop and actual library has probably been the most useful skill I've developed from this project. This includes writing documentation, learning about semantic versioning, configuring build tools and more. In addition, I've continued to enhance my skills using Typescript and React, as well as writing unit tests.
 

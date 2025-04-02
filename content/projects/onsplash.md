@@ -142,7 +142,7 @@ The function instantiates two arrays - one is an array of three nested arrays fo
 
 You definitely could modify the function to make sure the columns have the smallest possible difference in height, but I decided it wasn't worth it.
 
-Note: I omitted Typescript and parts of the Javascript to make the examples simpler (:
+Note: I omitted Typescript and parts of the Javascript to make the examples simpler.
 
 #### Folder structure
 
@@ -158,7 +158,7 @@ There are a a few ways the project could be improved. Firstly, some pages could 
 
 Another thing I would do differently would be to have a proper image API. There are many SaSS solutions that provides a service where you upload images which are then converted to individual endpoints. You could even make it yourself. I decided to simply reference the images hosted on Unsplash to avoid storage fees associated with hosting images on a server. There are several problems with this approach - firstly, it's not very moral of me to use their API for my own purposes, and secondly, it's very awkward for people to "upload" images because they have to reference a URL. Overall, it's not a very good solution, so hooking it up to something like Cloudinary would definitely be a huge improvement to Onsplash, even for performance.
 
-### Learnings I can use in the future
+### Learning lessons
 
 The codebase is too big to cover everything I did in this project, but hopefully the code snippets and explanations above give you an idea of what I did to complete the project. In terms of what I learned from this project, I've listed a few things below.
 

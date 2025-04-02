@@ -82,6 +82,6 @@ The reason for the `blog.data.data` notation is that the 'axios' library used to
 
 After verifying that blog posts could be displayed on each page, I implemented the rest of the frontend. This included styling the pages according to the design and implementing some simple logic like search.
 
-### Learnings
+### Learning lessons
 
 Building the project was a fairly short process but it definitely gave me a better grasp of working with Javascript, React, Next.js and connecting Strapi to a Next.js project.

@@ -73,6 +73,31 @@ body {
   animation-delay: 0.6s;
 }
 
+/* Miscellaneous. */
+
+.callout {
+  border-bottom: 1px solid oklch(0.872 0.01 258.338);
+  padding-bottom: 1rem;
+}
+
+.callout-title {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.callout-title::after {
+  content: '';
+  display: inline-block;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-radius: 9999px;
+  background-color: #4b5563;
+  margin: 0 0.5rem;
+}
+
 /* Night owl code theme. Source: https://github.com/highlightjs/highlight.js/blob/main/src/styles/night-owl.css */
 
 .hljs {
