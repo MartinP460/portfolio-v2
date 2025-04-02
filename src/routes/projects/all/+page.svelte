@@ -38,13 +38,13 @@
               class="flex gap-x-4 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1"
             >
               {#if liveUrl}
-                <a href={liveUrl} class="hover:underline">
+                <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">
                   Live preview
                   <IconExternalLink class="w-4" />
                 </a>
               {/if}
               {#if repoUrl}
-                <a href={repoUrl} class="hover:underline">
+                <a href={repoUrl} target="_blank" rel="noopener noreferrer" class="hover:underline">
                   Repository
                   <IconExternalLink class="w-4" />
                 </a>

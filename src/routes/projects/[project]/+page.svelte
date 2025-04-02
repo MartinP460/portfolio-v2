@@ -33,8 +33,12 @@
         {intro}
       </p>
       <div class="mt-4 flex gap-x-3 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1">
-        <a href={liveUrl} class="hover:underline">Live preview <IconExternalLink class="w-4" /></a>
-        <a href={repoUrl} class="hover:underline">Repository <IconExternalLink class="w-4" /></a>
+        <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
+          >Live preview <IconExternalLink class="w-4" /></a
+        >
+        <a href={repoUrl} target="_blank" rel="noopener noreferrer" class="hover:underline"
+          >Repository <IconExternalLink class="w-4" /></a
+        >
       </div>
     </div>
     {#if thumbnail}

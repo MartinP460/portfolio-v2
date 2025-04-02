@@ -8,7 +8,13 @@
 <div
   class="flex gap-x-4 [&>a]:rounded-full [&>a]:bg-primary/60 [&>a]:p-1 [&>a]:text-white [&>a]:transition-all [&>a]:duration-300 {className}"
 >
-  <a href={GITHUB_URL} title="CV/resumé" class="hover:scale-105 hover:bg-primary">
+  <a
+    href={GITHUB_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="CV/resumé"
+    class="hover:scale-105 hover:bg-primary"
+  >
     <IconFileCv class="h-6 w-6 sm:h-5 sm:w-5" />
   </a>
   <a
@@ -18,10 +24,22 @@
   >
     <IconMail class="h-6 w-6 sm:h-5 sm:w-5" />
   </a>
-  <a href={GITHUB_URL} title="Github: {GITHUB_USERNAME}" class="hover:scale-105 hover:bg-primary">
+  <a
+    href={GITHUB_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="Github: {GITHUB_USERNAME}"
+    class="hover:scale-105 hover:bg-primary"
+  >
     <IconBrandGithub class="h-6 w-6 sm:h-5 sm:w-5" />
   </a>
-  <a href={LINKEDIN_URL} title="LinkedIn: Martin Polley" class="hover:scale-105 hover:bg-primary">
+  <a
+    href={LINKEDIN_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    title="LinkedIn: Martin Polley"
+    class="hover:scale-105 hover:bg-primary"
+  >
     <IconBrandLinkedin class="h-6 w-6 sm:h-5 sm:w-5" />
   </a>
 </div>
