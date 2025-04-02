@@ -5,7 +5,7 @@ export async function load({ params }) {
   const projects = await getContent<Project>(ContentType.Projects)
   const project = projects.find((project) => project.slug === params.project)
 
-  if (project) return project
+  if (project && project.content) return project
 
   error(404, 'Not found')
 }

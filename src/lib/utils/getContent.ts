@@ -36,7 +36,8 @@ export const getContent = async <T>(type: ContentType) => {
         ...data,
         ...(data?.thumbnail ? { thumbnail: await convertThumbnailToPicture(data.thumbnail) } : {}),
         content: htmlContent,
-        tableOfContents: type === ContentType.Projects ? getTableOfContents(content) : undefined
+        tableOfContents:
+          type === ContentType.Projects && content ? getTableOfContents(content) : undefined
       } as T
     })
   )
@@ -78,14 +79,14 @@ export type Project = {
   title: string
   intro: string
   tags: string[]
-  path: string
+  path?: string
   slug: string
-  thumbnail: Picture
-  liveUrl: string
-  repoUrl: string
+  thumbnail?: Picture
+  liveUrl?: string
+  repoUrl?: string
   priority: number
-  content: string
-  tableOfContents: {
+  content?: string
+  tableOfContents?: {
     id: string
     title: string
     level: number

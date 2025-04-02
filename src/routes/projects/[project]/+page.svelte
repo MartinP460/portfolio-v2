@@ -37,44 +37,48 @@
         <a href={repoUrl} class="hover:underline">Repository <IconExternalLink class="w-4" /></a>
       </div>
     </div>
-    <a href="/projects" aria-label={title} class="flex justify-center lg:justify-end">
-      <enhanced:img
-        src={thumbnail}
-        alt="Hello"
-        class="page-transition-thumbnail aspect-[16/12] rounded object-cover lg:aspect-square lg:h-96 lg:w-96"
-        style:--thumbnail="image-{slug}"
-      />
-    </a>
+    {#if thumbnail}
+      <a href="/projects" aria-label={title} class="flex justify-center lg:justify-end">
+        <enhanced:img
+          src={thumbnail}
+          alt="Hello"
+          class="page-transition-thumbnail aspect-[16/12] rounded object-cover lg:aspect-square lg:h-96 lg:w-96"
+          style:--thumbnail="image-{slug}"
+        />
+      </a>
+    {/if}
   </div>
-  <div class="animate-fade-in animate-delay-4 relative my-12">
-    <div class="px-8 sm:px-0 lg:absolute lg:right-[-16.5rem] lg:w-[16.5rem] lg:pl-5">
-      {#if tableOfContents.length > 0}
-        <ul class="flex flex-col gap-y-2 text-base text-gray-500 lg:text-sm lg:text-gray-400">
-          {#each tableOfContents as header}
-            <li
-              style="margin-left:{(header.level - 3) * 10}px;"
-              class="transition-colors hover:text-gray-700"
-            >
-              <a href="#{header.id}">{header.title}</a>
-            </li>
+  {#if tableOfContents}
+    <div class="animate-fade-in animate-delay-4 relative my-12">
+      <div class="px-8 sm:px-0 lg:absolute lg:right-[-16.5rem] lg:w-[16.5rem] lg:pl-5">
+        {#if tableOfContents.length > 0}
+          <ul class="flex flex-col gap-y-2 text-base text-gray-500 lg:text-sm lg:text-gray-400">
+            {#each tableOfContents as header}
+              <li
+                style="margin-left:{(header.level - 3) * 10}px;"
+                class="transition-colors hover:text-gray-700"
+              >
+                <a href="#{header.id}">{header.title}</a>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+        <ul class="mt-8 flex flex-wrap items-center gap-y-1">
+          {#each tags as tag}
+            <div class="group flex items-center">
+              <li class="inline rounded-lg text-sm text-gray-400 lg:text-xs">{tag}</li>
+              <span class="mx-2 h-1 w-1 rounded-full bg-gray-300 group-last:hidden"> </span>
+            </div>
           {/each}
         </ul>
-      {/if}
-      <ul class="mt-8 flex flex-wrap items-center gap-y-1">
-        {#each tags as tag}
-          <div class="group flex items-center">
-            <li class="inline rounded-lg text-sm text-gray-400 lg:text-xs">{tag}</li>
-            <span class="mx-2 h-1 w-1 rounded-full bg-gray-300 group-last:hidden"> </span>
-          </div>
-        {/each}
-      </ul>
+      </div>
+      <article
+        class="prose mx-auto mt-8 w-full max-w-xl px-6 sm:px-0 lg:mt-0 [&>p>img]:rounded [&>pre>code]:block [&>pre>code]:overflow-x-auto [&>pre>code]:px-4 [&>pre]:w-[calc(100vw-3rem)] [&>pre]:sm:max-w-xl"
+      >
+        {@html content}
+      </article>
     </div>
-    <article
-      class="prose mx-auto mt-8 w-full max-w-xl px-6 sm:px-0 lg:mt-0 [&>p>img]:rounded [&>pre>code]:block [&>pre>code]:overflow-x-auto [&>pre>code]:px-4 [&>pre]:w-[calc(100vw-3rem)] [&>pre]:sm:max-w-xl"
-    >
-      {@html content}
-    </article>
-  </div>
+  {/if}
 </div>
 
 <style>

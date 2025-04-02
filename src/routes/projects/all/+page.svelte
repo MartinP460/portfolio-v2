@@ -20,12 +20,14 @@
               <p class="font-title text-xl">
                 {title}
               </p>
-              <a href={path} class="group inline-flex items-center gap-x-1">
-                <p class="text-primary group-hover:underline sm:text-sm">Read more</p>
-                <IconArrowForwardUp
-                  class="w-4 text-primary transition-transform ease-in group-hover:translate-x-1"
-                />
-              </a>
+              {#if path}
+                <a href={path} class="group inline-flex items-center gap-x-1">
+                  <p class="text-primary group-hover:underline sm:text-sm">Read more</p>
+                  <IconArrowForwardUp
+                    class="w-4 text-primary transition-transform ease-in group-hover:translate-x-1"
+                  />
+                </a>
+              {/if}
             </div>
             <p class="mt-2 text-sm text-gray-700">
               {intro}
@@ -35,14 +37,18 @@
             <div
               class="flex gap-x-4 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1"
             >
-              <a href={liveUrl} class="hover:underline">
-                Live preview
-                <IconExternalLink class="w-4" />
-              </a>
-              <a href={repoUrl} class="hover:underline">
-                Repository
-                <IconExternalLink class="w-4" />
-              </a>
+              {#if liveUrl}
+                <a href={liveUrl} class="hover:underline">
+                  Live preview
+                  <IconExternalLink class="w-4" />
+                </a>
+              {/if}
+              {#if repoUrl}
+                <a href={repoUrl} class="hover:underline">
+                  Repository
+                  <IconExternalLink class="w-4" />
+                </a>
+              {/if}
             </div>
           </div>
         </li>
