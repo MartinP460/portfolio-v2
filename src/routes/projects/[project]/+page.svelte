@@ -46,7 +46,7 @@
         <enhanced:img
           src={thumbnail}
           alt="Hello"
-          class="page-transition-thumbnail aspect-[16/12] rounded object-cover lg:aspect-square lg:h-96 lg:w-96"
+          class="page-transition-thumbnail aspect-[16/12] rounded object-cover brightness-95 lg:aspect-square lg:h-96 lg:w-96"
           style:--thumbnail="image-{slug}"
         />
       </a>

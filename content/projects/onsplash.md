@@ -11,7 +11,7 @@ tags:
   - Hasura
 slug: onsplash
 path: /projects/onsplash
-thumbnail: 'monkey'
+thumbnail: 'onsplash'
 liveUrl: https://onsplash.vercel.app/
 repoUrl: https://github.com/MartinP460/onsplash
 priority: 2
@@ -40,7 +40,7 @@ In summary, the main motivations for creating the project were:
 
 Organizing how to execute a project is one of the most important aspects of creating any larger project. One integral management tool I used to organize the project was a [kanban board](https://www.atlassian.com/agile/kanban/boards). The kanban board I used (and continue to use for most of my projects) is a simple 3-column board with the columns "to-do", "in progress" and "completed", and in this way I was able to keep track of what I was working on and what I had completed.
 
-![Photo of kanban board](/images/kanban-board.png)
+![Photo of kanban board](/images/kanban-board.webp)
 
 The nature of kanban board allows for multiple people to collaborate, hence the popularity of these boards within agile project management. However, it's also beneficial for a single developer to organize what needs to be done and when.
 
@@ -60,7 +60,7 @@ I also had to decide whether to allow users to upload images themselves like you
 
 Another challenge was creating the image gallery like the one on Unsplash:
 
-![Photo of Unsplash's image gallery](/images/unsplash-gallery.png)
+![Photo of Unsplash's image gallery](/images/unsplash-gallery.webp)
 
 I tried to recreate the Unsplash image gallery as accurately as possible. The gallery has several features that I needed to recreate:
 
@@ -110,7 +110,7 @@ const Gallery = ({ posts }) => {
 
 The `splitArrayToThreeNestedArrays` function split the array into three equally sized nested arrays each containing image objects. This approach presented another problem, however. At the end of the gallery, when there were no more images to display, the columns of images did not end at roughly same place. Instead, some columns of images were longer than others, like this:
 
-![The visual glitch in the gallery](/images/unsplash-gallery-glitch.png)
+![The visual glitch in the gallery](/images/unsplash-gallery-glitch.webp)
 
 The reason for this visual glitch was that, despite each array being equally sized, the height of the images in the nested arrays were all random which resulted in each column having a somewhat random height. To fix this, I added a height property to the image object and split the arrays depending on the height of each image. This is the code for the `splitArrayToThreeNestedArrays` function, modified to account for the change. I will explain it in more detail.
 
@@ -138,7 +138,7 @@ const splitArrayToThreeNestedArrays = (arr) => {
 
 The function instantiates two arrays - one is an array of three nested arrays for the result, and the other is an array of heights representing the height of each column. The function then loops over the array of posts (the array has to be an array of posts) and initially finds the shortest column, which is the index of the smallest integer within the `heights` array. This index is then stored as `lowestNestedArrayIndex`. The image object in the current iteration is then appended to the nested array within the `result` array. Lastly, the height of the column is updated to account for how much height the new image adds to the column. This column is `heights[lowestNestedArrayIndex]`. On the next iteration, a new column will then be the shortest and another image is appended to that column. This results in each column having roughly the same height:
 
-![Gallery without the visual glitch](/images/unsplash-gallery-without-glitch.png)
+![Gallery without the visual glitch](/images/unsplash-gallery-without-glitch.webp)
 
 You definitely could modify the function to make sure the columns have the smallest possible difference in height, but I decided it wasn't worth it.
 

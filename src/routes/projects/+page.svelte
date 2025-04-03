@@ -9,7 +9,7 @@
   <title>{createPageTitle('Projects')}</title>
 </svelte:head>
 
-<section class="flex items-center pb-16 md:h-full md:pb-48 2xl:pb-56">
+<section class="flex items-center pb-16 md:h-full">
   <div class="flex flex-col items-center px-8 font-body">
     <ul class="flex h-full w-full flex-col gap-8 sm:gap-4">
       {#each data.projects as { path, title, intro, thumbnail, slug }}
@@ -37,7 +37,7 @@
                 <enhanced:img
                   src={thumbnail}
                   alt="Thumbnail image of {title}"
-                  class="page-transition-thumbnail -z-20 aspect-[16/12] h-52 w-full rounded object-cover sm:h-32 sm:w-32 sm:min-w-32 lg:aspect-square"
+                  class="page-transition-thumbnail -z-20 aspect-[16/12] h-52 w-full rounded object-cover brightness-90 transition-[filter] group-hover:brightness-95 sm:h-32 sm:w-32 sm:min-w-32 lg:aspect-square"
                   style:--thumbnail="image-{slug}"
                 />
               </div>

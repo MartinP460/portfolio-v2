@@ -64,7 +64,7 @@ const convertThumbnailToPicture = async (thumbnail: string): Promise<Picture | n
   try {
     // Note that Vite requires that we use a relative import and that it ends with a file extension.
     const image = (await import(
-      `../../../static/thumbnails/${thumbnail}.jpg?enhanced`
+      `../../../static/images/${thumbnail}.webp?enhanced`
     )) as unknown as {
       default: Picture
     }

@@ -8,7 +8,7 @@ tags:
   - Jest
 slug: react-denmark-map
 path: /projects/react-denmark-map
-thumbnail: 'monkey'
+thumbnail: 'react-denmark-map'
 liveUrl: https://react-denmark-map.vercel.app/demo
 repoUrl: https://github.com/MartinP460/react-denmark-map
 priority: 1
@@ -104,7 +104,7 @@ This step isn't related to developing the library as such. But as previously men
 
 This may seem confusing but the result was a SVG with each municipality as a seperate path as seen on the image below.
 
-![SVG of Denmark with municipalities](/images/react-denmark-map-svg.png)
+![SVG of Denmark with municipalities](/images/react-denmark-map-svg.webp)
 
 To create the SVG for the regions of Denmark, I used a different approach. Since the regions each contain a set number of municipalities, I could simply erase the borders and merge the municipalities in the region. I was able to use the same approach to create the SVG for the islands of Denmark. Creating the full map of Denmark simply meant merging all the paths in the SVG.
 
