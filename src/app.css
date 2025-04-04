@@ -10,7 +10,19 @@
 :root {
   /* Disable default page view transitions. */
   view-transition-name: none;
+  /* Height of the navbar. */
   --navbar-height: 6rem;
+  /* Variables related to the logo animation. */
+  --logo-width: 67px;
+  --logo-height: 80px;
+  --logo-vertical-offset: -10vh;
+  --logo-m-vertical-offset: -14.2px;
+  --logo-pol-vertical-offset: -46.3px;
+  --logo-m-horizontal-offset: -109.4px;
+  --logo-pol-horizontal-offset: 46.32px;
+  --logo-delay: 0.2s;
+  --logo-duration: 2s;
+  --logo-bg-delay: 1.6s;
 }
 
 html,
@@ -22,7 +34,7 @@ body {
   background-color: rgba(54, 82, 29, 0.273);
 }
 
-/* Fade-in animations. */
+/* Animations. */
 
 @keyframes fade-in {
   from {
@@ -52,6 +64,94 @@ body {
 .animate-fade-in-top {
   opacity: 0;
   animation: fade-in-top ease-in-out 0.6s forwards;
+}
+
+.animate-logo {
+  color: #283f13; /* This is text-primary. */
+  font-family: 'DM Serif Text', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  height: var(--logo-height);
+  left: 50%;
+  line-height: 2rem;
+  margin-left: calc(var(--logo-width) / -2);
+  margin-top: calc((var(--logo-height) / -2) - var(--logo-vertical-offset));
+  position: fixed;
+  top: 33.333333%;
+  width: var(--logo-width);
+}
+
+.animate-logo > *:first-child {
+  opacity: 0;
+  display: block;
+  animation: var(--logo-duration) move-letter-m ease-in-out var(--logo-delay) forwards;
+}
+
+.animate-logo > *:last-child {
+  opacity: 0;
+  display: block;
+  animation: var(--logo-duration) move-letters-pol ease-in-out var(--logo-delay) forwards;
+}
+
+.animate-logo-bg {
+  opacity: 0;
+  animation: 0.6s fade-in ease-in-out var(--logo-bg-delay) forwards;
+}
+
+@keyframes move-letter-m {
+  0% {
+    opacity: 0;
+    transform: scale(110%);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(0, 0) scale(110%);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(
+      var(--logo-m-horizontal-offset),
+      calc(var(--logo-vertical-offset) + var(--logo-m-vertical-offset))
+    );
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      var(--logo-m-horizontal-offset),
+      calc(var(--logo-vertical-offset) + var(--logo-m-vertical-offset))
+    );
+  }
+}
+
+@keyframes move-letters-pol {
+  0% {
+    opacity: 0;
+    transform: scale(110%);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(0, 0) scale(110%);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(
+      var(--logo-pol-horizontal-offset),
+      calc(var(--logo-vertical-offset) + var(--logo-pol-vertical-offset))
+    );
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(
+      var(--logo-pol-horizontal-offset),
+      calc(var(--logo-vertical-offset) + var(--logo-pol-vertical-offset))
+    );
+  }
 }
 
 .animate-delay-1 {
