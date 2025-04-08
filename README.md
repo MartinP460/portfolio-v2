@@ -1,8 +1,22 @@
-# Portfolio of Martin Polley
+<br />
+<br />
+<br />
+<div align="center">
+  <h3>Portfolio of Martin Polley</h3>
+  <h3>
+  <a href="https://www.mpol.dev/">
+    mpol.dev
+  </a>
+  </h3>
+</div>
+<br />
+<br />
+<br />
 
-This is the official portfolio of Martin Polley. Made with Svelte, SvelteKit, TailwindCSS and Bits UI.
 
-## Developing
+Made with Svelte, SvelteKit, TailwindCSS and Bits UI.
+
+#### Developing
 
 Install dependencies with `npm install`, then use the commands below:
 
