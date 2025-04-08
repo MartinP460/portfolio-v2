@@ -24,11 +24,11 @@
     </div>
     <div class="relative mt-4">
       <p class="font-bold text-black lg:absolute lg:-left-24">Thesis</p>
-      <div class="">{education.thesisTopic} - "{education.thesisTitle}"</div>
+      <div class="text-sm">{education.thesisTopic} - "{education.thesisTitle}"</div>
     </div>
     <div class="relative mt-4">
       <p class="font-bold text-black lg:absolute lg:-left-24">Courses</p>
-      <div class="flex flex-col sm:block">
+      <div class="flex flex-col text-sm sm:block">
         {#each education.coursesTaken as courseName}
           <div class="group/courses inline-flex items-center leading-relaxed">
             <p class="first:ml-0">{courseName}</p>

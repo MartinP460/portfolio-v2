@@ -20,7 +20,7 @@
   <div class="lg:hidden">
     <Dialog.Root bind:open={isNavbarDialogOpen}>
       <Dialog.Trigger class="flex items-center gap-2">
-        <p class="font-title text-lg">{navbarRoutes[path]?.name}</p>
+        <p class="font-body text-lg">{navbarRoutes[path]?.name}</p>
         <IconChevronDown size="20" />
       </Dialog.Trigger>
 

@@ -9,7 +9,7 @@
   <title>{createPageTitle('Experience')}</title>
 </svelte:head>
 
-<section class="flex h-full items-center px-4 pb-16 md:pb-48">
+<section class="flex h-full items-center px-8 pb-16 md:pb-48">
   <div class="flex w-full flex-col">
     {#each data.experience as { companyName, position, timePeriod, logo, content }}
       <div class="group flex items-center gap-4 text-gray-600 sm:gap-6">
@@ -40,7 +40,7 @@
             <div class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:block"></div>
             <p>{timePeriod}</p>
           </div>
-          <p class="mt-2 font-body text-gray-800">
+          <p class="mt-2 font-body text-sm text-gray-800">
             {@html content}
           </p>
         </div>

@@ -13,9 +13,11 @@
 </svelte:head>
 
 <div class="flex flex-col items-center justify-center font-body lg:mt-12">
-  <div class="flex flex-col-reverse gap-x-20 px-8 lg:w-[145%] lg:flex-row lg:px-16 xl:px-0">
+  <div
+    class="flex flex-col-reverse justify-between gap-x-8 px-8 lg:w-[130%] lg:flex-row lg:px-16 xl:w-[145%] xl:px-0"
+  >
     <div
-      class="animate-fade-in animate-delay-2 relative mt-6 flex flex-1 flex-col justify-center lg:ml-12"
+      class="animate-fade-in animate-delay-2 relative mt-6 flex flex-col justify-center lg:ml-12"
     >
       <div class="relative flex flex-col lg:flex-row lg:items-center">
         <a
@@ -29,7 +31,7 @@
           {title}
         </h1>
       </div>
-      <p class="mt-4 text-gray-600">
+      <p class="mt-4 text-gray-600 lg:max-w-[500px]">
         {intro}
       </p>
       <div class="mt-4 flex gap-x-3 text-sm text-primary [&>a]:flex [&>a]:items-center [&>a]:gap-1">
@@ -54,9 +56,11 @@
   </div>
   {#if tableOfContents}
     <div class="animate-fade-in animate-delay-4 relative my-12">
-      <div class="px-8 sm:px-0 lg:absolute lg:right-[-16.5rem] lg:w-[16.5rem] lg:pl-5">
+      <div class="px-8 sm:px-0 xl:absolute xl:right-[-16.5rem] xl:w-[16.5rem] xl:pl-5">
         {#if tableOfContents.length > 0}
-          <ul class="flex flex-col gap-y-2 text-base text-gray-500 lg:text-sm lg:text-gray-400">
+          <ul
+            class="flex flex-col gap-y-2 text-base text-gray-500 md:gap-y-1.5 lg:text-sm xl:gap-y-2 xl:text-gray-400"
+          >
             {#each tableOfContents as header}
               <li
                 style="margin-left:{(header.level - 3) * 10}px;"
@@ -70,14 +74,14 @@
         <ul class="mt-8 flex flex-wrap items-center gap-y-1">
           {#each tags as tag}
             <div class="group flex items-center">
-              <li class="inline rounded-lg text-sm text-gray-400 lg:text-xs">{tag}</li>
+              <li class="inline rounded-lg text-sm text-gray-400 xl:text-xs">{tag}</li>
               <span class="mx-2 h-1 w-1 rounded-full bg-gray-300 group-last:hidden"> </span>
             </div>
           {/each}
         </ul>
       </div>
       <article
-        class="prose mx-auto mt-8 w-full max-w-xl px-6 sm:px-0 lg:mt-0 [&>p>img]:rounded [&>pre>code]:block [&>pre>code]:overflow-x-auto [&>pre>code]:px-4 [&>pre]:w-[calc(100vw-3rem)] [&>pre]:sm:max-w-xl"
+        class="prose mx-auto mt-8 w-full max-w-xl px-6 sm:px-0 xl:mt-0 [&>p>img]:rounded [&>pre>code]:block [&>pre>code]:overflow-x-auto [&>pre>code]:px-4 [&>pre]:w-[calc(100vw-3rem)] [&>pre]:sm:max-w-xl"
       >
         {@html content}
       </article>
