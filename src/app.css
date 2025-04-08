@@ -2,10 +2,23 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Importing DM Serif Text (titles) and DM Sans (body). */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1');
-
 @plugin '@tailwindcss/typography';
+
+/* Importing DM Sans (body). */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/fonts/DMSans-Regular.woff2') format('woff2');
+}
+
+/* Importing DM Serif Text (titles). */
+@font-face {
+  font-family: 'DM Serif Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/DMSerifText-Regular.woff2') format('woff2');
+}
 
 :root {
   /* Disable default page view transitions. */
@@ -23,6 +36,7 @@
   --logo-delay: 0.2s;
   --logo-duration: 2s;
   --logo-foreground-delay: 1.6s;
+  /* Variables related to the background consisting of 4 rotated lines. */
   --bg-delay: 1.2s;
   --bg-translate-x: 0;
   --bg-translate-y: 0;
@@ -238,13 +252,13 @@ body {
   margin: 0 0.5rem;
 }
 
-/* Night owl code theme. Source: https://github.com/highlightjs/highlight.js/blob/main/src/styles/night-owl.css */
+/* Night owl code theme. Source: https://github.com/highlightjs/highlight.js/blob/main/src/styles/night-owl.css. */
 
 .hljs {
   color: #d6deeb;
 }
 
-/* General Purpose */
+/* Night owl code theme - general purpose. */
 .hljs-keyword {
   color: #c792ea;
   font-style: italic;
@@ -288,7 +302,7 @@ body {
   color: #7fdbca;
 }
 
-/* Meta */
+/* Night owl code theme - meta. */
 .hljs-comment {
   color: #637777;
   font-style: italic;
@@ -306,7 +320,7 @@ body {
   color: #ecc48d;
 }
 
-/* Tags, attributes, config */
+/* Night owl code theme - tags, attributes, config. */
 .hljs-section {
   color: #82b1ff;
 }
@@ -324,7 +338,7 @@ body {
   color: #addb67;
 }
 
-/* Markup */
+/* Night owl code theme - markup. */
 .hljs-bullet {
   color: #d9f5dd;
 }
@@ -350,7 +364,7 @@ body {
   font-style: italic;
 }
 
-/* CSS */
+/* Night owl code theme - CSS. */
 .hljs-selector-tag {
   color: #ff6363;
 }
@@ -370,7 +384,7 @@ body {
   font-style: italic;
 }
 
-/* Templates */
+/* Night owl code theme - templates. */
 .hljs-template-tag {
   color: #c792ea;
 }
@@ -378,7 +392,7 @@ body {
   color: #addb67;
 }
 
-/* diff */
+/* Night owl code theme - diff. */
 .hljs-addition {
   color: #addb67ff;
   font-style: italic;
