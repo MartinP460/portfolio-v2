@@ -11,7 +11,7 @@
 
 <section class="flex h-full items-center px-8 pb-16 md:pb-48">
   <div class="flex w-full flex-col">
-    {#each data.experience as { companyName, position, timePeriod, logo, content }}
+    {#each data.experience as { companyName, position, timePeriod, logo, content, location }}
       <div class="group flex items-center gap-4 text-gray-600 sm:gap-6">
         <div class="flex h-full flex-col items-center [&>div]:bg-primary">
           <div class="mb-1 hidden h-0.5 w-2 rounded-sm group-first:block"></div>
@@ -37,6 +37,8 @@
             class="mt-1 flex flex-col gap-y-1 font-body text-sm font-semibold text-primary sm:flex-row sm:items-center"
           >
             <p>{position}</p>
+            <div class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:block"></div>
+            <p>{location}</p>
             <div class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:block"></div>
             <p>{timePeriod}</p>
           </div>

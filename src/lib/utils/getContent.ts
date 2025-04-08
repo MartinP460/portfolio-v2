@@ -100,6 +100,7 @@ export type Experience = {
   timePeriod: string
   logo: string
   content: string
+  location: string
 }
 
 export type About = {
