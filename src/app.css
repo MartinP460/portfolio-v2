@@ -53,6 +53,10 @@ body {
   background-color: rgba(54, 82, 29, 0.273);
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 /* Animations. */
 
 @keyframes fade-in {
