@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { EMAIL_ADDRESS, GITHUB_URL, GITHUB_USERNAME, LINKEDIN_URL } from '$lib/utils/socials'
+  import {
+    EMAIL_ADDRESS,
+    GITHUB_URL,
+    RESUME_PATH,
+    GITHUB_USERNAME,
+    LINKEDIN_URL
+  } from '$lib/utils/socials'
   import { IconBrandGithub, IconBrandLinkedin, IconFileCv, IconMail } from '@tabler/icons-svelte'
 
   let { class: className = '' } = $props()
@@ -9,7 +15,7 @@
   class="flex gap-x-4 [&>a]:rounded-full [&>a]:bg-primary/60 [&>a]:p-1 [&>a]:text-white [&>a]:transition-all [&>a]:duration-300 {className}"
 >
   <a
-    href={GITHUB_URL}
+    href={RESUME_PATH}
     target="_blank"
     rel="noopener noreferrer"
     title="CV/resumé"

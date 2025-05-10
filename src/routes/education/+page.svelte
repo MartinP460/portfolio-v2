@@ -17,9 +17,9 @@
   <div class="group">
     <Ucph class="h-16 w-16 transition-transform duration-300 group-hover:scale-110" />
     <h1 class="mt-4 font-title text-2xl font-bold text-black">{education.educationName}</h1>
-    <div class="mt-1 flex items-center text-sm font-bold text-primary">
+    <div class="mt-1 flex flex-col text-sm font-bold text-primary sm:flex-row sm:items-center">
       <p>{education.institutionName}</p>
-      <span class="mx-4 h-1 w-1 rounded-full bg-gray-600"></span>
+      <span class="mx-4 hidden h-1 w-1 rounded-full bg-gray-600 sm:inline"></span>
       <p>{education.years}</p>
     </div>
     <div class="relative mt-4">
