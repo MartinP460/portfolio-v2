@@ -12,7 +12,7 @@
 </svelte:head>
 
 <section
-  class="flex flex-col justify-center px-4 pb-16 font-body text-gray-800 md:h-full md:pb-48 lg:ml-24"
+  class="flex flex-col justify-center px-8 pb-16 font-body text-gray-800 md:h-full md:pb-48 lg:ml-24"
 >
   <div class="group">
     <Ucph class="h-16 w-16 transition-transform duration-300 group-hover:scale-110" />
