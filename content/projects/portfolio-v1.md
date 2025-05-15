@@ -8,6 +8,6 @@ tags:
   - TailwindCSS
 slug: portfolio-v1
 repoUrl: https://github.com/MartinP460/portfolio
-liveUrl: https://www.martpol.dev/
+liveUrl: https://v1.mpol.dev/
 priority: 5
 ---
