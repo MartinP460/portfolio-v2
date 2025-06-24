@@ -2,7 +2,7 @@
 companyName: Lenus eHealth
 employerNumber: 1
 position: Student Software Engineer
-timePeriod: December '22 - now
+timePeriod: December '22 - June '25
 logo: lenus
 location: Copenhagen, DK
 ---
