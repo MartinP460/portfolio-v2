@@ -12,7 +12,7 @@ path: '/projects/strapi-blog'
 thumbnail: 'strapi-blog'
 liveUrl: https://strapi-blog-ebon.vercel.app/
 repoUrl: https://github.com/MartinP460/strapi-blog
-priority: 3
+priority: 4
 ---
 
 This app does not reinvent the wheel. It's a simple blog app that uses [Strapi](https://strapi.io/) as the backend and [Next.js](https://nextjs.org/) as the frontend. If you visit the site, you will see a list of blog posts with randomly generated titles and placeholder text.

@@ -10,5 +10,5 @@ tags:
   - TailwindCSS
 slug: mtgdle
 repoUrl: https://github.com/ChrisBrinchLarsen/MTG-Project-DIKU
-priority: 4
+priority: 5
 ---

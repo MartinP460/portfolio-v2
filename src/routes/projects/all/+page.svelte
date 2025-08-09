@@ -12,7 +12,7 @@
 <section class="flex items-center pb-16 md:h-full md:pb-48 2xl:pb-64">
   <div class="mt-4 flex flex-col items-center px-8 font-body">
     <a href="/projects" class="mt-4 text-lg text-primary hover:underline">Highlighted projects</a>
-    <ul class="mt-6 grid w-full gap-x-4 gap-y-8 sm:grid-cols-2">
+    <ul class="mt-6 grid w-full gap-x-8 gap-y-10 sm:grid-cols-2">
       {#each data.projects as { title, path, liveUrl, repoUrl, intro }}
         <li class="flex flex-col justify-between">
           <div>

@@ -11,7 +11,7 @@ path: /projects/react-denmark-map
 thumbnail: 'react-denmark-map'
 liveUrl: https://react-denmark-map.vercel.app/demo
 repoUrl: https://github.com/MartinP460/react-denmark-map
-priority: 1
+priority: 2
 ---
 
 <div class="callout">

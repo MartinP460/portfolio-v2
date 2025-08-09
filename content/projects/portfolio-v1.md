@@ -9,5 +9,5 @@ tags:
 slug: portfolio-v1
 repoUrl: https://github.com/MartinP460/portfolio
 liveUrl: https://v1.mpol.dev/
-priority: 5
+priority: 6
 ---
