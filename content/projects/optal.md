@@ -33,7 +33,7 @@ Achieving performance on the frontend firstly means mitigating load and cross-pa
 
 The main downside to this approach is that the build time can be long due to the fact that a potentially large number of pages need to be prerendered.
 
-You may be wondering why the project includes a backend app then. This is to allow people to post feedback and uses Node.js and Fastify. The feedback is sent from the frontend's feedback form to the backend's only endpoint which in turn sends the data through to optal.dk's Supabase project. It's possible to expand the backend with more functionality if the need should arise but feedback is the only thing the backend is used for at the time of writing.
+You may be wondering why the project includes a backend app then. This is to allow people to post feedback. The feedback is sent from the frontend's feedback form to the backend's only endpoint which in turn sends the data through to optal.dk's Supabase project. It uses Node.js and Fastify. It's possible to expand the backend with more functionality if the need should arise but feedback is the only thing the backend is used for at the time of writing.
 
 The entire project sits in a monorepo with the structure shown below. The `reader` package reads and transforms the data from KOT as previously mentioned and we'll see how that ties in the frontend next. Note that the repo also includes a custom ESLint configuration package.
 
